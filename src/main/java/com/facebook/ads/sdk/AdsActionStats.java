@@ -55,6 +55,8 @@ public class AdsActionStats extends APINode {
   private String m1dEvFirstConversion = null;
   @SerializedName("1d_passback")
   private String m1dPassback = null;
+  @SerializedName("1d_sequenced")
+  private String m1dSequenced = null;
   @SerializedName("1d_view")
   private String m1dView = null;
   @SerializedName("1d_view_all_conversions")
@@ -69,6 +71,8 @@ public class AdsActionStats extends APINode {
   private String m28dClickFirstConversion = null;
   @SerializedName("28d_passback")
   private String m28dPassback = null;
+  @SerializedName("28d_sequenced")
+  private String m28dSequenced = null;
   @SerializedName("28d_view")
   private String m28dView = null;
   @SerializedName("28d_view_all_conversions")
@@ -83,6 +87,8 @@ public class AdsActionStats extends APINode {
   private String m7dClickFirstConversion = null;
   @SerializedName("7d_passback")
   private String m7dPassback = null;
+  @SerializedName("7d_sequenced")
+  private String m7dSequenced = null;
   @SerializedName("7d_view")
   private String m7dView = null;
   @SerializedName("7d_view_all_conversions")
@@ -371,6 +377,15 @@ public class AdsActionStats extends APINode {
     return this;
   }
 
+  public String getField1dSequenced() {
+    return m1dSequenced;
+  }
+
+  public AdsActionStats setField1dSequenced(String value) {
+    this.m1dSequenced = value;
+    return this;
+  }
+
   public String getField1dView() {
     return m1dView;
   }
@@ -434,6 +449,15 @@ public class AdsActionStats extends APINode {
     return this;
   }
 
+  public String getField28dSequenced() {
+    return m28dSequenced;
+  }
+
+  public AdsActionStats setField28dSequenced(String value) {
+    this.m28dSequenced = value;
+    return this;
+  }
+
   public String getField28dView() {
     return m28dView;
   }
@@ -494,6 +518,15 @@ public class AdsActionStats extends APINode {
 
   public AdsActionStats setField7dPassback(String value) {
     this.m7dPassback = value;
+    return this;
+  }
+
+  public String getField7dSequenced() {
+    return m7dSequenced;
+  }
+
+  public AdsActionStats setField7dSequenced(String value) {
+    this.m7dSequenced = value;
     return this;
   }
 
@@ -854,6 +887,7 @@ public class AdsActionStats extends APINode {
     this.m1dEvAllConversions = instance.m1dEvAllConversions;
     this.m1dEvFirstConversion = instance.m1dEvFirstConversion;
     this.m1dPassback = instance.m1dPassback;
+    this.m1dSequenced = instance.m1dSequenced;
     this.m1dView = instance.m1dView;
     this.m1dViewAllConversions = instance.m1dViewAllConversions;
     this.m1dViewFirstConversion = instance.m1dViewFirstConversion;
@@ -861,6 +895,7 @@ public class AdsActionStats extends APINode {
     this.m28dClickAllConversions = instance.m28dClickAllConversions;
     this.m28dClickFirstConversion = instance.m28dClickFirstConversion;
     this.m28dPassback = instance.m28dPassback;
+    this.m28dSequenced = instance.m28dSequenced;
     this.m28dView = instance.m28dView;
     this.m28dViewAllConversions = instance.m28dViewAllConversions;
     this.m28dViewFirstConversion = instance.m28dViewFirstConversion;
@@ -868,6 +903,7 @@ public class AdsActionStats extends APINode {
     this.m7dClickAllConversions = instance.m7dClickAllConversions;
     this.m7dClickFirstConversion = instance.m7dClickFirstConversion;
     this.m7dPassback = instance.m7dPassback;
+    this.m7dSequenced = instance.m7dSequenced;
     this.m7dView = instance.m7dView;
     this.m7dViewAllConversions = instance.m7dViewAllConversions;
     this.m7dViewFirstConversion = instance.m7dViewFirstConversion;

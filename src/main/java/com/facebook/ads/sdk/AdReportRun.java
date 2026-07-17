@@ -499,6 +499,8 @@ public class AdReportRun extends APINode {
       "creative_diversity_data",
       "creative_diversity_label",
       "creative_diversity_score",
+      "creative_fatigue_summary",
+      "creative_fatigued_ads",
       "creative_media_type",
       "ctr",
       "date_start",
@@ -579,7 +581,6 @@ public class AdReportRun extends APINode {
       "result_rate",
       "result_values_performance_indicator",
       "results",
-      "shop_clicks",
       "shops_assisted_purchases",
       "social_spend",
       "spend",
@@ -1398,6 +1399,20 @@ public class AdReportRun extends APINode {
       this.requestField("creative_diversity_score", value);
       return this;
     }
+    public APIRequestGetInsights requestCreativeFatigueSummaryField () {
+      return this.requestCreativeFatigueSummaryField(true);
+    }
+    public APIRequestGetInsights requestCreativeFatigueSummaryField (boolean value) {
+      this.requestField("creative_fatigue_summary", value);
+      return this;
+    }
+    public APIRequestGetInsights requestCreativeFatiguedAdsField () {
+      return this.requestCreativeFatiguedAdsField(true);
+    }
+    public APIRequestGetInsights requestCreativeFatiguedAdsField (boolean value) {
+      this.requestField("creative_fatigued_ads", value);
+      return this;
+    }
     public APIRequestGetInsights requestCreativeMediaTypeField () {
       return this.requestCreativeMediaTypeField(true);
     }
@@ -1958,13 +1973,6 @@ public class AdReportRun extends APINode {
       this.requestField("results", value);
       return this;
     }
-    public APIRequestGetInsights requestShopClicksField () {
-      return this.requestShopClicksField(true);
-    }
-    public APIRequestGetInsights requestShopClicksField (boolean value) {
-      this.requestField("shop_clicks", value);
-      return this;
-    }
     public APIRequestGetInsights requestShopsAssistedPurchasesField () {
       return this.requestShopsAssistedPurchasesField(true);
     }
@@ -2517,10 +2525,14 @@ public class AdReportRun extends APINode {
       VALUE_1D_CLICK("1d_click"),
       @SerializedName("1d_ev")
       VALUE_1D_EV("1d_ev"),
+      @SerializedName("1d_sequenced")
+      VALUE_1D_SEQUENCED("1d_sequenced"),
       @SerializedName("1d_view")
       VALUE_1D_VIEW("1d_view"),
       @SerializedName("28d_click")
       VALUE_28D_CLICK("28d_click"),
+      @SerializedName("28d_sequenced")
+      VALUE_28D_SEQUENCED("28d_sequenced"),
       @SerializedName("28d_view")
       VALUE_28D_VIEW("28d_view"),
       @SerializedName("28d_view_all_conversions")
@@ -2529,16 +2541,26 @@ public class AdReportRun extends APINode {
       VALUE_28D_VIEW_FIRST_CONVERSION("28d_view_first_conversion"),
       @SerializedName("7d_click")
       VALUE_7D_CLICK("7d_click"),
+      @SerializedName("7d_sequenced")
+      VALUE_7D_SEQUENCED("7d_sequenced"),
       @SerializedName("7d_view")
       VALUE_7D_VIEW("7d_view"),
       @SerializedName("7d_view_all_conversions")
       VALUE_7D_VIEW_ALL_CONVERSIONS("7d_view_all_conversions"),
       @SerializedName("7d_view_first_conversion")
       VALUE_7D_VIEW_FIRST_CONVERSION("7d_view_first_conversion"),
+      @SerializedName("custom")
+      VALUE_CUSTOM("custom"),
       @SerializedName("dda")
       VALUE_DDA("dda"),
       @SerializedName("default")
       VALUE_DEFAULT("default"),
+      @SerializedName("incrementality")
+      VALUE_INCREMENTALITY("incrementality"),
+      @SerializedName("incrementality_all_conversions")
+      VALUE_INCREMENTALITY_ALL_CONVERSIONS("incrementality_all_conversions"),
+      @SerializedName("incrementality_first_conversion")
+      VALUE_INCREMENTALITY_FIRST_CONVERSION("incrementality_first_conversion"),
       @SerializedName("skan_click")
       VALUE_SKAN_CLICK("skan_click"),
       @SerializedName("skan_click_second_postback")

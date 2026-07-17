@@ -59,6 +59,8 @@ public class AdCreativeSourcingSpec extends APINode {
   private Object mFeaturedOfferingSpec = null;
   @SerializedName("intent")
   private Object mIntent = null;
+  @SerializedName("ncs_testimonial")
+  private Object mNcsTestimonial = null;
   @SerializedName("pca_spec")
   private Object mPcaSpec = null;
   @SerializedName("product_media_metadata_spec")
@@ -307,6 +309,15 @@ public class AdCreativeSourcingSpec extends APINode {
     return this;
   }
 
+  public Object getFieldNcsTestimonial() {
+    return mNcsTestimonial;
+  }
+
+  public AdCreativeSourcingSpec setFieldNcsTestimonial(Object value) {
+    this.mNcsTestimonial = value;
+    return this;
+  }
+
   public Object getFieldPcaSpec() {
     return mPcaSpec;
   }
@@ -415,6 +426,7 @@ public class AdCreativeSourcingSpec extends APINode {
     this.mEnableSocialFeedbackPreservation = instance.mEnableSocialFeedbackPreservation;
     this.mFeaturedOfferingSpec = instance.mFeaturedOfferingSpec;
     this.mIntent = instance.mIntent;
+    this.mNcsTestimonial = instance.mNcsTestimonial;
     this.mPcaSpec = instance.mPcaSpec;
     this.mProductMediaMetadataSpec = instance.mProductMediaMetadataSpec;
     this.mPromotionMetadataSpec = instance.mPromotionMetadataSpec;

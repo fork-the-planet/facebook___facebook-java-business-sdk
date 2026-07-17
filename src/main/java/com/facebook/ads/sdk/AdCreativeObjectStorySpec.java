@@ -57,6 +57,8 @@ public class AdCreativeObjectStorySpec extends APINode {
   private AdCreativeTextData mTextData = null;
   @SerializedName("video_data")
   private AdCreativeVideoData mVideoData = null;
+  @SerializedName("whats_app_business_phone_number")
+  private String mWhatsAppBusinessPhoneNumber = null;
   protected static Gson gson = null;
 
   public AdCreativeObjectStorySpec() {
@@ -310,6 +312,15 @@ public class AdCreativeObjectStorySpec extends APINode {
     this.mVideoData = AdCreativeVideoData.getGson().fromJson(value, type);
     return this;
   }
+  public String getFieldWhatsAppBusinessPhoneNumber() {
+    return mWhatsAppBusinessPhoneNumber;
+  }
+
+  public AdCreativeObjectStorySpec setFieldWhatsAppBusinessPhoneNumber(String value) {
+    this.mWhatsAppBusinessPhoneNumber = value;
+    return this;
+  }
+
 
 
 
@@ -335,6 +346,7 @@ public class AdCreativeObjectStorySpec extends APINode {
     this.mTemplateData = instance.mTemplateData;
     this.mTextData = instance.mTextData;
     this.mVideoData = instance.mVideoData;
+    this.mWhatsAppBusinessPhoneNumber = instance.mWhatsAppBusinessPhoneNumber;
     this.context = instance.context;
     this.rawValue = instance.rawValue;
     return this;

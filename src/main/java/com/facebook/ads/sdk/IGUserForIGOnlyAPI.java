@@ -328,6 +328,14 @@ public class IGUserForIGOnlyAPI extends APINode {
     return new APIRequestCreateMessengerProfile(this.getPrefixedId().toString(), context);
   }
 
+  public APIRequestCreatePassThreadControl createPassThreadControl() {
+    return new APIRequestCreatePassThreadControl(this.getPrefixedId().toString(), context);
+  }
+
+  public APIRequestCreateReleaseThreadControl createReleaseThreadControl() {
+    return new APIRequestCreateReleaseThreadControl(this.getPrefixedId().toString(), context);
+  }
+
   public APIRequestGetStories getStories() {
     return new APIRequestGetStories(this.getPrefixedId().toString(), context);
   }
@@ -1384,6 +1392,7 @@ public class IGUserForIGOnlyAPI extends APINode {
       "collaborators",
       "cover_url",
       "image_url",
+      "is_ai_generated",
       "is_carousel_item",
       "is_paid_partnership",
       "location_id",
@@ -1508,6 +1517,15 @@ public class IGUserForIGOnlyAPI extends APINode {
 
     public APIRequestCreateMedia setImageUrl (String imageUrl) {
       this.setParam("image_url", imageUrl);
+      return this;
+    }
+
+    public APIRequestCreateMedia setIsAiGenerated (Boolean isAiGenerated) {
+      this.setParam("is_ai_generated", isAiGenerated);
+      return this;
+    }
+    public APIRequestCreateMedia setIsAiGenerated (String isAiGenerated) {
+      this.setParam("is_ai_generated", isAiGenerated);
       return this;
     }
 
@@ -2517,6 +2535,248 @@ public class IGUserForIGOnlyAPI extends APINode {
 
   }
 
+  public static class APIRequestCreatePassThreadControl extends APIRequest<APINode> {
+
+    APINode lastResponse = null;
+    @Override
+    public APINode getLastResponse() {
+      return lastResponse;
+    }
+    public static final String[] PARAMS = {
+      "metadata",
+      "recipient",
+      "target_app_id",
+    };
+
+    public static final String[] FIELDS = {
+    };
+
+    @Override
+    public APINode parseResponse(String response, String header) throws APIException {
+      return APINode.parseResponse(response, getContext(), this, header).head();
+    }
+
+    @Override
+    public APINode execute() throws APIException {
+      return execute(new HashMap<String, Object>());
+    }
+
+    @Override
+    public APINode execute(Map<String, Object> extraParams) throws APIException {
+      ResponseWrapper rw = executeInternal(extraParams);
+      lastResponse = parseResponse(rw.getBody(), rw.getHeader());
+      return lastResponse;
+    }
+
+    public ListenableFuture<APINode> executeAsync() throws APIException {
+      return executeAsync(new HashMap<String, Object>());
+    };
+
+    public ListenableFuture<APINode> executeAsync(Map<String, Object> extraParams) throws APIException {
+      return Futures.transform(
+        executeAsyncInternal(extraParams),
+        new Function<ResponseWrapper, APINode>() {
+           public APINode apply(ResponseWrapper result) {
+             try {
+               return APIRequestCreatePassThreadControl.this.parseResponse(result.getBody(), result.getHeader());
+             } catch (Exception e) {
+               throw new RuntimeException(e);
+             }
+           }
+         },
+         MoreExecutors.directExecutor()
+      );
+    };
+
+    public APIRequestCreatePassThreadControl(String nodeId, APIContext context) {
+      super(context, nodeId, "/passthreadcontrol", "POST", Arrays.asList(PARAMS));
+    }
+
+    @Override
+    public APIRequestCreatePassThreadControl setParam(String param, Object value) {
+      setParamInternal(param, value);
+      return this;
+    }
+
+    @Override
+    public APIRequestCreatePassThreadControl setParams(Map<String, Object> params) {
+      setParamsInternal(params);
+      return this;
+    }
+
+
+    public APIRequestCreatePassThreadControl setMetadata (String metadata) {
+      this.setParam("metadata", metadata);
+      return this;
+    }
+
+    public APIRequestCreatePassThreadControl setRecipient (Object recipient) {
+      this.setParam("recipient", recipient);
+      return this;
+    }
+    public APIRequestCreatePassThreadControl setRecipient (String recipient) {
+      this.setParam("recipient", recipient);
+      return this;
+    }
+
+    public APIRequestCreatePassThreadControl setTargetAppId (String targetAppId) {
+      this.setParam("target_app_id", targetAppId);
+      return this;
+    }
+
+    public APIRequestCreatePassThreadControl requestAllFields () {
+      return this.requestAllFields(true);
+    }
+
+    public APIRequestCreatePassThreadControl requestAllFields (boolean value) {
+      for (String field : FIELDS) {
+        this.requestField(field, value);
+      }
+      return this;
+    }
+
+    @Override
+    public APIRequestCreatePassThreadControl requestFields (List<String> fields) {
+      return this.requestFields(fields, true);
+    }
+
+    @Override
+    public APIRequestCreatePassThreadControl requestFields (List<String> fields, boolean value) {
+      for (String field : fields) {
+        this.requestField(field, value);
+      }
+      return this;
+    }
+
+    @Override
+    public APIRequestCreatePassThreadControl requestField (String field) {
+      this.requestField(field, true);
+      return this;
+    }
+
+    @Override
+    public APIRequestCreatePassThreadControl requestField (String field, boolean value) {
+      this.requestFieldInternal(field, value);
+      return this;
+    }
+
+  }
+
+  public static class APIRequestCreateReleaseThreadControl extends APIRequest<APINode> {
+
+    APINode lastResponse = null;
+    @Override
+    public APINode getLastResponse() {
+      return lastResponse;
+    }
+    public static final String[] PARAMS = {
+      "recipient",
+    };
+
+    public static final String[] FIELDS = {
+    };
+
+    @Override
+    public APINode parseResponse(String response, String header) throws APIException {
+      return APINode.parseResponse(response, getContext(), this, header).head();
+    }
+
+    @Override
+    public APINode execute() throws APIException {
+      return execute(new HashMap<String, Object>());
+    }
+
+    @Override
+    public APINode execute(Map<String, Object> extraParams) throws APIException {
+      ResponseWrapper rw = executeInternal(extraParams);
+      lastResponse = parseResponse(rw.getBody(), rw.getHeader());
+      return lastResponse;
+    }
+
+    public ListenableFuture<APINode> executeAsync() throws APIException {
+      return executeAsync(new HashMap<String, Object>());
+    };
+
+    public ListenableFuture<APINode> executeAsync(Map<String, Object> extraParams) throws APIException {
+      return Futures.transform(
+        executeAsyncInternal(extraParams),
+        new Function<ResponseWrapper, APINode>() {
+           public APINode apply(ResponseWrapper result) {
+             try {
+               return APIRequestCreateReleaseThreadControl.this.parseResponse(result.getBody(), result.getHeader());
+             } catch (Exception e) {
+               throw new RuntimeException(e);
+             }
+           }
+         },
+         MoreExecutors.directExecutor()
+      );
+    };
+
+    public APIRequestCreateReleaseThreadControl(String nodeId, APIContext context) {
+      super(context, nodeId, "/releasethreadcontrol", "POST", Arrays.asList(PARAMS));
+    }
+
+    @Override
+    public APIRequestCreateReleaseThreadControl setParam(String param, Object value) {
+      setParamInternal(param, value);
+      return this;
+    }
+
+    @Override
+    public APIRequestCreateReleaseThreadControl setParams(Map<String, Object> params) {
+      setParamsInternal(params);
+      return this;
+    }
+
+
+    public APIRequestCreateReleaseThreadControl setRecipient (Object recipient) {
+      this.setParam("recipient", recipient);
+      return this;
+    }
+    public APIRequestCreateReleaseThreadControl setRecipient (String recipient) {
+      this.setParam("recipient", recipient);
+      return this;
+    }
+
+    public APIRequestCreateReleaseThreadControl requestAllFields () {
+      return this.requestAllFields(true);
+    }
+
+    public APIRequestCreateReleaseThreadControl requestAllFields (boolean value) {
+      for (String field : FIELDS) {
+        this.requestField(field, value);
+      }
+      return this;
+    }
+
+    @Override
+    public APIRequestCreateReleaseThreadControl requestFields (List<String> fields) {
+      return this.requestFields(fields, true);
+    }
+
+    @Override
+    public APIRequestCreateReleaseThreadControl requestFields (List<String> fields, boolean value) {
+      for (String field : fields) {
+        this.requestField(field, value);
+      }
+      return this;
+    }
+
+    @Override
+    public APIRequestCreateReleaseThreadControl requestField (String field) {
+      this.requestField(field, true);
+      return this;
+    }
+
+    @Override
+    public APIRequestCreateReleaseThreadControl requestField (String field, boolean value) {
+      this.requestFieldInternal(field, value);
+      return this;
+    }
+
+  }
+
   public static class APIRequestGetStories extends APIRequest<APINode> {
 
     APINodeList<APINode> lastResponse = null;
@@ -2955,6 +3215,9 @@ public class IGUserForIGOnlyAPI extends APINode {
       return lastResponse;
     }
     public static final String[] PARAMS = {
+      "media_type",
+      "posted_after",
+      "posted_before",
     };
 
     public static final String[] FIELDS = {
@@ -3013,6 +3276,21 @@ public class IGUserForIGOnlyAPI extends APINode {
       return this;
     }
 
+
+    public APIRequestGetTags setMediaType (String mediaType) {
+      this.setParam("media_type", mediaType);
+      return this;
+    }
+
+    public APIRequestGetTags setPostedAfter (String postedAfter) {
+      this.setParam("posted_after", postedAfter);
+      return this;
+    }
+
+    public APIRequestGetTags setPostedBefore (String postedBefore) {
+      this.setParam("posted_before", postedBefore);
+      return this;
+    }
 
     public APIRequestGetTags requestAllFields () {
       return this.requestAllFields(true);

@@ -1296,6 +1296,8 @@ public class AdAccountTargetingUnified extends APINode {
       VALUE_PROSPECTING_AUDIENCE("prospecting_audience"),
       @SerializedName("publisher_platforms")
       VALUE_PUBLISHER_PLATFORMS("publisher_platforms"),
+      @SerializedName("purchase_intent")
+      VALUE_PURCHASE_INTENT("purchase_intent"),
       @SerializedName("radius")
       VALUE_RADIUS("radius"),
       @SerializedName("region_keys")

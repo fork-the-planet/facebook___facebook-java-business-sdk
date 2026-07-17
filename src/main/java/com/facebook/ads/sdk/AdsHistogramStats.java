@@ -55,6 +55,8 @@ public class AdsHistogramStats extends APINode {
   private List<Long> m1dEvFirstConversion = null;
   @SerializedName("1d_passback")
   private List<Long> m1dPassback = null;
+  @SerializedName("1d_sequenced")
+  private List<Long> m1dSequenced = null;
   @SerializedName("1d_view")
   private List<Long> m1dView = null;
   @SerializedName("1d_view_all_conversions")
@@ -69,6 +71,8 @@ public class AdsHistogramStats extends APINode {
   private List<Long> m28dClickFirstConversion = null;
   @SerializedName("28d_passback")
   private List<Long> m28dPassback = null;
+  @SerializedName("28d_sequenced")
+  private List<Long> m28dSequenced = null;
   @SerializedName("28d_view")
   private List<Long> m28dView = null;
   @SerializedName("28d_view_all_conversions")
@@ -83,6 +87,8 @@ public class AdsHistogramStats extends APINode {
   private List<Long> m7dClickFirstConversion = null;
   @SerializedName("7d_passback")
   private List<Long> m7dPassback = null;
+  @SerializedName("7d_sequenced")
+  private List<Long> m7dSequenced = null;
   @SerializedName("7d_view")
   private List<Long> m7dView = null;
   @SerializedName("7d_view_all_conversions")
@@ -371,6 +377,15 @@ public class AdsHistogramStats extends APINode {
     return this;
   }
 
+  public List<Long> getField1dSequenced() {
+    return m1dSequenced;
+  }
+
+  public AdsHistogramStats setField1dSequenced(List<Long> value) {
+    this.m1dSequenced = value;
+    return this;
+  }
+
   public List<Long> getField1dView() {
     return m1dView;
   }
@@ -434,6 +449,15 @@ public class AdsHistogramStats extends APINode {
     return this;
   }
 
+  public List<Long> getField28dSequenced() {
+    return m28dSequenced;
+  }
+
+  public AdsHistogramStats setField28dSequenced(List<Long> value) {
+    this.m28dSequenced = value;
+    return this;
+  }
+
   public List<Long> getField28dView() {
     return m28dView;
   }
@@ -494,6 +518,15 @@ public class AdsHistogramStats extends APINode {
 
   public AdsHistogramStats setField7dPassback(List<Long> value) {
     this.m7dPassback = value;
+    return this;
+  }
+
+  public List<Long> getField7dSequenced() {
+    return m7dSequenced;
+  }
+
+  public AdsHistogramStats setField7dSequenced(List<Long> value) {
+    this.m7dSequenced = value;
     return this;
   }
 
@@ -854,6 +887,7 @@ public class AdsHistogramStats extends APINode {
     this.m1dEvAllConversions = instance.m1dEvAllConversions;
     this.m1dEvFirstConversion = instance.m1dEvFirstConversion;
     this.m1dPassback = instance.m1dPassback;
+    this.m1dSequenced = instance.m1dSequenced;
     this.m1dView = instance.m1dView;
     this.m1dViewAllConversions = instance.m1dViewAllConversions;
     this.m1dViewFirstConversion = instance.m1dViewFirstConversion;
@@ -861,6 +895,7 @@ public class AdsHistogramStats extends APINode {
     this.m28dClickAllConversions = instance.m28dClickAllConversions;
     this.m28dClickFirstConversion = instance.m28dClickFirstConversion;
     this.m28dPassback = instance.m28dPassback;
+    this.m28dSequenced = instance.m28dSequenced;
     this.m28dView = instance.m28dView;
     this.m28dViewAllConversions = instance.m28dViewAllConversions;
     this.m28dViewFirstConversion = instance.m28dViewFirstConversion;
@@ -868,6 +903,7 @@ public class AdsHistogramStats extends APINode {
     this.m7dClickAllConversions = instance.m7dClickAllConversions;
     this.m7dClickFirstConversion = instance.m7dClickFirstConversion;
     this.m7dPassback = instance.m7dPassback;
+    this.m7dSequenced = instance.m7dSequenced;
     this.m7dView = instance.m7dView;
     this.m7dViewAllConversions = instance.m7dViewAllConversions;
     this.m7dViewFirstConversion = instance.m7dViewFirstConversion;

@@ -302,8 +302,6 @@ public class InsightsResult extends APINode {
   public static enum EnumMetric {
       @SerializedName("comments")
       VALUE_COMMENTS("comments"),
-      @SerializedName("content_views")
-      VALUE_CONTENT_VIEWS("content_views"),
       @SerializedName("crossposted_views")
       VALUE_CROSSPOSTED_VIEWS("crossposted_views"),
       @SerializedName("facebook_views")

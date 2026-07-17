@@ -43,6 +43,8 @@ import com.facebook.ads.sdk.APIException.MalformedResponseException;
 public class IGMedia extends APINode {
   @SerializedName("alt_text")
   private String mAltText = null;
+  @SerializedName("audio_id")
+  private String mAudioId = null;
   @SerializedName("boost_eligibility_info")
   private IGMediaBoostEligibilityInfo mBoostEligibilityInfo = null;
   @SerializedName("caption")
@@ -61,6 +63,8 @@ public class IGMedia extends APINode {
   private String mId = null;
   @SerializedName("ig_id")
   private String mIgId = null;
+  @SerializedName("is_ai_generated")
+  private Boolean mIsAiGenerated = null;
   @SerializedName("is_comment_enabled")
   private Boolean mIsCommentEnabled = null;
   @SerializedName("is_shared_to_feed")
@@ -379,6 +383,10 @@ public class IGMedia extends APINode {
     return mAltText;
   }
 
+  public String getFieldAudioId() {
+    return mAudioId;
+  }
+
   public IGMediaBoostEligibilityInfo getFieldBoostEligibilityInfo() {
     if (mBoostEligibilityInfo != null) {
       mBoostEligibilityInfo.context = getContext();
@@ -416,6 +424,10 @@ public class IGMedia extends APINode {
 
   public String getFieldIgId() {
     return mIgId;
+  }
+
+  public Boolean getFieldIsAiGenerated() {
+    return mIsAiGenerated;
   }
 
   public Boolean getFieldIsCommentEnabled() {
@@ -890,6 +902,7 @@ public class IGMedia extends APINode {
 
     public static final String[] FIELDS = {
       "alt_text",
+      "audio_id",
       "boost_eligibility_info",
       "caption",
       "comments_count",
@@ -899,6 +912,7 @@ public class IGMedia extends APINode {
       "has_slider",
       "id",
       "ig_id",
+      "is_ai_generated",
       "is_comment_enabled",
       "is_shared_to_feed",
       "legacy_instagram_media_id",
@@ -1020,6 +1034,13 @@ public class IGMedia extends APINode {
       this.requestField("alt_text", value);
       return this;
     }
+    public APIRequestGetChildren requestAudioIdField () {
+      return this.requestAudioIdField(true);
+    }
+    public APIRequestGetChildren requestAudioIdField (boolean value) {
+      this.requestField("audio_id", value);
+      return this;
+    }
     public APIRequestGetChildren requestBoostEligibilityInfoField () {
       return this.requestBoostEligibilityInfoField(true);
     }
@@ -1081,6 +1102,13 @@ public class IGMedia extends APINode {
     }
     public APIRequestGetChildren requestIgIdField (boolean value) {
       this.requestField("ig_id", value);
+      return this;
+    }
+    public APIRequestGetChildren requestIsAiGeneratedField () {
+      return this.requestIsAiGeneratedField(true);
+    }
+    public APIRequestGetChildren requestIsAiGeneratedField (boolean value) {
+      this.requestField("is_ai_generated", value);
       return this;
     }
     public APIRequestGetChildren requestIsCommentEnabledField () {
@@ -2521,6 +2549,7 @@ public class IGMedia extends APINode {
 
     public static final String[] FIELDS = {
       "alt_text",
+      "audio_id",
       "boost_eligibility_info",
       "caption",
       "comments_count",
@@ -2530,6 +2559,7 @@ public class IGMedia extends APINode {
       "has_slider",
       "id",
       "ig_id",
+      "is_ai_generated",
       "is_comment_enabled",
       "is_shared_to_feed",
       "legacy_instagram_media_id",
@@ -2694,6 +2724,13 @@ public class IGMedia extends APINode {
       this.requestField("alt_text", value);
       return this;
     }
+    public APIRequestGet requestAudioIdField () {
+      return this.requestAudioIdField(true);
+    }
+    public APIRequestGet requestAudioIdField (boolean value) {
+      this.requestField("audio_id", value);
+      return this;
+    }
     public APIRequestGet requestBoostEligibilityInfoField () {
       return this.requestBoostEligibilityInfoField(true);
     }
@@ -2755,6 +2792,13 @@ public class IGMedia extends APINode {
     }
     public APIRequestGet requestIgIdField (boolean value) {
       this.requestField("ig_id", value);
+      return this;
+    }
+    public APIRequestGet requestIsAiGeneratedField () {
+      return this.requestIsAiGeneratedField(true);
+    }
+    public APIRequestGet requestIsAiGeneratedField (boolean value) {
+      this.requestField("is_ai_generated", value);
       return this;
     }
     public APIRequestGet requestIsCommentEnabledField () {
@@ -3063,6 +3107,7 @@ public class IGMedia extends APINode {
 
   public IGMedia copyFrom(IGMedia instance) {
     this.mAltText = instance.mAltText;
+    this.mAudioId = instance.mAudioId;
     this.mBoostEligibilityInfo = instance.mBoostEligibilityInfo;
     this.mCaption = instance.mCaption;
     this.mCommentsCount = instance.mCommentsCount;
@@ -3072,6 +3117,7 @@ public class IGMedia extends APINode {
     this.mHasSlider = instance.mHasSlider;
     this.mId = instance.mId;
     this.mIgId = instance.mIgId;
+    this.mIsAiGenerated = instance.mIsAiGenerated;
     this.mIsCommentEnabled = instance.mIsCommentEnabled;
     this.mIsSharedToFeed = instance.mIsSharedToFeed;
     this.mLegacyInstagramMediaId = instance.mLegacyInstagramMediaId;

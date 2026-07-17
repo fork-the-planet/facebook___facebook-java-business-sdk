@@ -2881,6 +2881,7 @@ public class BusinessUser extends APINode {
       "template_auto_archival_enabled",
       "timezone_id",
       "whatsapp_business_manager_messaging_limit",
+      "whatsapp_manager_marketing_messages_max_price_enroll_status",
     };
 
     @Override
@@ -3174,6 +3175,13 @@ public class BusinessUser extends APINode {
     }
     public APIRequestGetAssignedWhatsAppBusinessAccounts requestWhatsappBusinessManagerMessagingLimitField (boolean value) {
       this.requestField("whatsapp_business_manager_messaging_limit", value);
+      return this;
+    }
+    public APIRequestGetAssignedWhatsAppBusinessAccounts requestWhatsappManagerMarketingMessagesMaxPriceEnrollStatusField () {
+      return this.requestWhatsappManagerMarketingMessagesMaxPriceEnrollStatusField(true);
+    }
+    public APIRequestGetAssignedWhatsAppBusinessAccounts requestWhatsappManagerMarketingMessagesMaxPriceEnrollStatusField (boolean value) {
+      this.requestField("whatsapp_manager_marketing_messages_max_price_enroll_status", value);
       return this;
     }
   }

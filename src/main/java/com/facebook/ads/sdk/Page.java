@@ -14982,6 +14982,7 @@ public class Page extends APINode {
       "media_count",
       "mentioned_comment",
       "mentioned_media",
+      "mini_shop_storefront",
       "name",
       "owner_business",
       "profile_picture_url",
@@ -15170,6 +15171,13 @@ public class Page extends APINode {
     }
     public APIRequestGetInstagramAccounts requestMentionedMediaField (boolean value) {
       this.requestField("mentioned_media", value);
+      return this;
+    }
+    public APIRequestGetInstagramAccounts requestMiniShopStorefrontField () {
+      return this.requestMiniShopStorefrontField(true);
+    }
+    public APIRequestGetInstagramAccounts requestMiniShopStorefrontField (boolean value) {
+      this.requestField("mini_shop_storefront", value);
       return this;
     }
     public APIRequestGetInstagramAccounts requestNameField () {
@@ -15527,6 +15535,7 @@ public class Page extends APINode {
       "custom_disclaimer",
       "follow_up_action_url",
       "is_for_canvas",
+      "is_lead_capture_ai_agent_enabled",
       "is_optimized_for_quality",
       "is_phone_sms_verify_enabled",
       "locale",
@@ -15653,6 +15662,15 @@ public class Page extends APINode {
     }
     public APIRequestCreateLeadGenForm setIsForCanvas (String isForCanvas) {
       this.setParam("is_for_canvas", isForCanvas);
+      return this;
+    }
+
+    public APIRequestCreateLeadGenForm setIsLeadCaptureAiAgentEnabled (Boolean isLeadCaptureAiAgentEnabled) {
+      this.setParam("is_lead_capture_ai_agent_enabled", isLeadCaptureAiAgentEnabled);
+      return this;
+    }
+    public APIRequestCreateLeadGenForm setIsLeadCaptureAiAgentEnabled (String isLeadCaptureAiAgentEnabled) {
+      this.setParam("is_lead_capture_ai_agent_enabled", isLeadCaptureAiAgentEnabled);
       return this;
     }
 
@@ -22851,6 +22869,7 @@ public class Page extends APINode {
       "media_count",
       "mentioned_comment",
       "mentioned_media",
+      "mini_shop_storefront",
       "name",
       "owner_business",
       "profile_picture_url",
@@ -23039,6 +23058,13 @@ public class Page extends APINode {
     }
     public APIRequestGetPageBackedInstagramAccounts requestMentionedMediaField (boolean value) {
       this.requestField("mentioned_media", value);
+      return this;
+    }
+    public APIRequestGetPageBackedInstagramAccounts requestMiniShopStorefrontField () {
+      return this.requestMiniShopStorefrontField(true);
+    }
+    public APIRequestGetPageBackedInstagramAccounts requestMiniShopStorefrontField (boolean value) {
+      this.requestField("mini_shop_storefront", value);
       return this;
     }
     public APIRequestGetPageBackedInstagramAccounts requestNameField () {
@@ -24297,6 +24323,7 @@ public class Page extends APINode {
       "privacy",
       "profile_id",
       "provenance_info",
+      "provenance_metadata",
       "proxied_app_id",
       "published",
       "qn",
@@ -24649,6 +24676,15 @@ public class Page extends APINode {
     }
     public APIRequestCreatePhoto setProvenanceInfo (String provenanceInfo) {
       this.setParam("provenance_info", provenanceInfo);
+      return this;
+    }
+
+    public APIRequestCreatePhoto setProvenanceMetadata (Map<String, String> provenanceMetadata) {
+      this.setParam("provenance_metadata", provenanceMetadata);
+      return this;
+    }
+    public APIRequestCreatePhoto setProvenanceMetadata (String provenanceMetadata) {
+      this.setParam("provenance_metadata", provenanceMetadata);
       return this;
     }
 

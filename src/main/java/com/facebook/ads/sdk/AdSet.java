@@ -43,6 +43,8 @@ import com.facebook.ads.sdk.APIException.MalformedResponseException;
 public class AdSet extends APINode {
   @SerializedName("account_id")
   private String mAccountId = null;
+  @SerializedName("ad_set_goal")
+  private AdCampaignGoal mAdSetGoal = null;
   @SerializedName("adlabels")
   private List<AdLabel> mAdlabels = null;
   @SerializedName("adset_schedule")
@@ -131,6 +133,8 @@ public class AdSet extends APINode {
   private Boolean mIsIncrementalAttributionEnabled = null;
   @SerializedName("is_organic_ad_joint_optimized")
   private Boolean mIsOrganicAdJointOptimized = null;
+  @SerializedName("is_sequenced_conversion_creation")
+  private Boolean mIsSequencedConversionCreation = null;
   @SerializedName("issues_info")
   private List<AdCampaignIssuesInfo> mIssuesInfo = null;
   @SerializedName("learning_stage_info")
@@ -510,6 +514,20 @@ public class AdSet extends APINode {
     return this;
   }
 
+  public AdCampaignGoal getFieldAdSetGoal() {
+    return mAdSetGoal;
+  }
+
+  public AdSet setFieldAdSetGoal(AdCampaignGoal value) {
+    this.mAdSetGoal = value;
+    return this;
+  }
+
+  public AdSet setFieldAdSetGoal(String value) {
+    Type type = new TypeToken<AdCampaignGoal>(){}.getType();
+    this.mAdSetGoal = AdCampaignGoal.getGson().fromJson(value, type);
+    return this;
+  }
   public List<AdLabel> getFieldAdlabels() {
     return mAdlabels;
   }
@@ -946,6 +964,15 @@ public class AdSet extends APINode {
 
   public AdSet setFieldIsOrganicAdJointOptimized(Boolean value) {
     this.mIsOrganicAdJointOptimized = value;
+    return this;
+  }
+
+  public Boolean getFieldIsSequencedConversionCreation() {
+    return mIsSequencedConversionCreation;
+  }
+
+  public AdSet setFieldIsSequencedConversionCreation(Boolean value) {
+    this.mIsSequencedConversionCreation = value;
     return this;
   }
 
@@ -1401,6 +1428,7 @@ public class AdSet extends APINode {
       "object_id",
       "object_name",
       "object_type",
+      "tool",
       "translated_event_type",
     };
 
@@ -1616,6 +1644,13 @@ public class AdSet extends APINode {
     }
     public APIRequestGetActivities requestObjectTypeField (boolean value) {
       this.requestField("object_type", value);
+      return this;
+    }
+    public APIRequestGetActivities requestToolField () {
+      return this.requestToolField(true);
+    }
+    public APIRequestGetActivities requestToolField (boolean value) {
+      this.requestField("tool", value);
       return this;
     }
     public APIRequestGetActivities requestTranslatedEventTypeField () {
@@ -4060,6 +4095,7 @@ public class AdSet extends APINode {
 
     public static final String[] FIELDS = {
       "account_id",
+      "ad_set_goal",
       "adlabels",
       "adset_schedule",
       "asset_feed_id",
@@ -4104,6 +4140,7 @@ public class AdSet extends APINode {
       "is_dynamic_creative",
       "is_incremental_attribution_enabled",
       "is_organic_ad_joint_optimized",
+      "is_sequenced_conversion_creation",
       "issues_info",
       "learning_stage_info",
       "lifetime_budget",
@@ -4277,6 +4314,13 @@ public class AdSet extends APINode {
     }
     public APIRequestGetCopies requestAccountIdField (boolean value) {
       this.requestField("account_id", value);
+      return this;
+    }
+    public APIRequestGetCopies requestAdSetGoalField () {
+      return this.requestAdSetGoalField(true);
+    }
+    public APIRequestGetCopies requestAdSetGoalField (boolean value) {
+      this.requestField("ad_set_goal", value);
       return this;
     }
     public APIRequestGetCopies requestAdlabelsField () {
@@ -4585,6 +4629,13 @@ public class AdSet extends APINode {
     }
     public APIRequestGetCopies requestIsOrganicAdJointOptimizedField (boolean value) {
       this.requestField("is_organic_ad_joint_optimized", value);
+      return this;
+    }
+    public APIRequestGetCopies requestIsSequencedConversionCreationField () {
+      return this.requestIsSequencedConversionCreationField(true);
+    }
+    public APIRequestGetCopies requestIsSequencedConversionCreationField (boolean value) {
+      this.requestField("is_sequenced_conversion_creation", value);
       return this;
     }
     public APIRequestGetCopies requestIssuesInfoField () {
@@ -6378,6 +6429,7 @@ public class AdSet extends APINode {
 
     public static final String[] FIELDS = {
       "account_id",
+      "ad_set_goal",
       "adlabels",
       "adset_schedule",
       "asset_feed_id",
@@ -6422,6 +6474,7 @@ public class AdSet extends APINode {
       "is_dynamic_creative",
       "is_incremental_attribution_enabled",
       "is_organic_ad_joint_optimized",
+      "is_sequenced_conversion_creation",
       "issues_info",
       "learning_stage_info",
       "lifetime_budget",
@@ -6595,6 +6648,13 @@ public class AdSet extends APINode {
     }
     public APIRequestGet requestAccountIdField (boolean value) {
       this.requestField("account_id", value);
+      return this;
+    }
+    public APIRequestGet requestAdSetGoalField () {
+      return this.requestAdSetGoalField(true);
+    }
+    public APIRequestGet requestAdSetGoalField (boolean value) {
+      this.requestField("ad_set_goal", value);
       return this;
     }
     public APIRequestGet requestAdlabelsField () {
@@ -6905,6 +6965,13 @@ public class AdSet extends APINode {
       this.requestField("is_organic_ad_joint_optimized", value);
       return this;
     }
+    public APIRequestGet requestIsSequencedConversionCreationField () {
+      return this.requestIsSequencedConversionCreationField(true);
+    }
+    public APIRequestGet requestIsSequencedConversionCreationField (boolean value) {
+      this.requestField("is_sequenced_conversion_creation", value);
+      return this;
+    }
     public APIRequestGet requestIssuesInfoField () {
       return this.requestIssuesInfoField(true);
     }
@@ -7196,6 +7263,7 @@ public class AdSet extends APINode {
     }
     public static final String[] PARAMS = {
       "account_id",
+      "ad_set_goal",
       "adlabels",
       "adset_schedule",
       "attribution_spec",
@@ -7205,6 +7273,7 @@ public class AdSet extends APINode {
       "bid_constraints",
       "bid_strategy",
       "billing_event",
+      "brand_safety_config",
       "budget_schedule_specs",
       "campaign_attribution",
       "campaign_spec",
@@ -7229,6 +7298,7 @@ public class AdSet extends APINode {
       "is_dc_follow_optimized",
       "is_incremental_attribution_enabled",
       "is_sac_cfca_terms_certified",
+      "is_sequenced_conversion_creation",
       "lifetime_budget",
       "lifetime_imps",
       "lifetime_min_spend_target",
@@ -7325,6 +7395,15 @@ public class AdSet extends APINode {
       return this;
     }
 
+    public APIRequestUpdate setAdSetGoal (Map<String, String> adSetGoal) {
+      this.setParam("ad_set_goal", adSetGoal);
+      return this;
+    }
+    public APIRequestUpdate setAdSetGoal (String adSetGoal) {
+      this.setParam("ad_set_goal", adSetGoal);
+      return this;
+    }
+
     public APIRequestUpdate setAdlabels (List<Object> adlabels) {
       this.setParam("adlabels", adlabels);
       return this;
@@ -7403,6 +7482,15 @@ public class AdSet extends APINode {
     }
     public APIRequestUpdate setBillingEvent (String billingEvent) {
       this.setParam("billing_event", billingEvent);
+      return this;
+    }
+
+    public APIRequestUpdate setBrandSafetyConfig (Map<String, String> brandSafetyConfig) {
+      this.setParam("brand_safety_config", brandSafetyConfig);
+      return this;
+    }
+    public APIRequestUpdate setBrandSafetyConfig (String brandSafetyConfig) {
+      this.setParam("brand_safety_config", brandSafetyConfig);
       return this;
     }
 
@@ -7603,6 +7691,15 @@ public class AdSet extends APINode {
     }
     public APIRequestUpdate setIsSacCfcaTermsCertified (String isSacCfcaTermsCertified) {
       this.setParam("is_sac_cfca_terms_certified", isSacCfcaTermsCertified);
+      return this;
+    }
+
+    public APIRequestUpdate setIsSequencedConversionCreation (Boolean isSequencedConversionCreation) {
+      this.setParam("is_sequenced_conversion_creation", isSequencedConversionCreation);
+      return this;
+    }
+    public APIRequestUpdate setIsSequencedConversionCreation (String isSequencedConversionCreation) {
+      this.setParam("is_sequenced_conversion_creation", isSequencedConversionCreation);
       return this;
     }
 
@@ -8476,6 +8573,12 @@ public class AdSet extends APINode {
       VALUE_18("18"),
       @SerializedName("19")
       VALUE_19("19"),
+      @SerializedName("20")
+      VALUE_20("20"),
+      @SerializedName("21")
+      VALUE_21("21"),
+      @SerializedName("22")
+      VALUE_22("22"),
       ;
 
       private String value;
@@ -8575,6 +8678,7 @@ public class AdSet extends APINode {
 
   public AdSet copyFrom(AdSet instance) {
     this.mAccountId = instance.mAccountId;
+    this.mAdSetGoal = instance.mAdSetGoal;
     this.mAdlabels = instance.mAdlabels;
     this.mAdsetSchedule = instance.mAdsetSchedule;
     this.mAssetFeedId = instance.mAssetFeedId;
@@ -8619,6 +8723,7 @@ public class AdSet extends APINode {
     this.mIsDynamicCreative = instance.mIsDynamicCreative;
     this.mIsIncrementalAttributionEnabled = instance.mIsIncrementalAttributionEnabled;
     this.mIsOrganicAdJointOptimized = instance.mIsOrganicAdJointOptimized;
+    this.mIsSequencedConversionCreation = instance.mIsSequencedConversionCreation;
     this.mIssuesInfo = instance.mIssuesInfo;
     this.mLearningStageInfo = instance.mLearningStageInfo;
     this.mLifetimeBudget = instance.mLifetimeBudget;

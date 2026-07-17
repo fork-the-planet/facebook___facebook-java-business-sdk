@@ -63,6 +63,8 @@ public class AdActivity extends APINode {
   private String mObjectName = null;
   @SerializedName("object_type")
   private String mObjectType = null;
+  @SerializedName("tool")
+  private String mTool = null;
   @SerializedName("translated_event_type")
   private String mTranslatedEventType = null;
   protected static Gson gson = null;
@@ -315,6 +317,15 @@ public class AdActivity extends APINode {
     return this;
   }
 
+  public String getFieldTool() {
+    return mTool;
+  }
+
+  public AdActivity setFieldTool(String value) {
+    this.mTool = value;
+    return this;
+  }
+
   public String getFieldTranslatedEventType() {
     return mTranslatedEventType;
   }
@@ -455,6 +466,12 @@ public class AdActivity extends APINode {
       VALUE_UPDATE_AD_SET_BIDDING("update_ad_set_bidding"),
       @SerializedName("update_ad_set_budget")
       VALUE_UPDATE_AD_SET_BUDGET("update_ad_set_budget"),
+      @SerializedName("update_ad_set_budget_scaling_cost_target")
+      VALUE_UPDATE_AD_SET_BUDGET_SCALING_COST_TARGET("update_ad_set_budget_scaling_cost_target"),
+      @SerializedName("update_ad_set_budget_scaling_extra_budget")
+      VALUE_UPDATE_AD_SET_BUDGET_SCALING_EXTRA_BUDGET("update_ad_set_budget_scaling_extra_budget"),
+      @SerializedName("update_ad_set_budget_scaling_status")
+      VALUE_UPDATE_AD_SET_BUDGET_SCALING_STATUS("update_ad_set_budget_scaling_status"),
       @SerializedName("update_ad_set_cost_bidding_mode")
       VALUE_UPDATE_AD_SET_COST_BIDDING_MODE("update_ad_set_cost_bidding_mode"),
       @SerializedName("update_ad_set_duration")
@@ -507,6 +524,12 @@ public class AdActivity extends APINode {
       VALUE_UPDATE_CAMPAIGN_GROUP_AD_SCHEDULING("update_campaign_group_ad_scheduling"),
       @SerializedName("update_campaign_group_agency_fee")
       VALUE_UPDATE_CAMPAIGN_GROUP_AGENCY_FEE("update_campaign_group_agency_fee"),
+      @SerializedName("update_campaign_group_budget_scaling_cost_target")
+      VALUE_UPDATE_CAMPAIGN_GROUP_BUDGET_SCALING_COST_TARGET("update_campaign_group_budget_scaling_cost_target"),
+      @SerializedName("update_campaign_group_budget_scaling_extra_budget")
+      VALUE_UPDATE_CAMPAIGN_GROUP_BUDGET_SCALING_EXTRA_BUDGET("update_campaign_group_budget_scaling_extra_budget"),
+      @SerializedName("update_campaign_group_budget_scaling_status")
+      VALUE_UPDATE_CAMPAIGN_GROUP_BUDGET_SCALING_STATUS("update_campaign_group_budget_scaling_status"),
       @SerializedName("update_campaign_group_budget_scheduling_state")
       VALUE_UPDATE_CAMPAIGN_GROUP_BUDGET_SCHEDULING_STATE("update_campaign_group_budget_scheduling_state"),
       @SerializedName("update_campaign_group_delivery_type")
@@ -627,6 +650,7 @@ public class AdActivity extends APINode {
     this.mObjectId = instance.mObjectId;
     this.mObjectName = instance.mObjectName;
     this.mObjectType = instance.mObjectType;
+    this.mTool = instance.mTool;
     this.mTranslatedEventType = instance.mTranslatedEventType;
     this.context = instance.context;
     this.rawValue = instance.rawValue;

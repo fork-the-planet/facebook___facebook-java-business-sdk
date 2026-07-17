@@ -99,6 +99,8 @@ public class WhatsAppBusinessAccount extends APINode {
   private String mTimezoneId = null;
   @SerializedName("whatsapp_business_manager_messaging_limit")
   private EnumWhatsappBusinessManagerMessagingLimit mWhatsappBusinessManagerMessagingLimit = null;
+  @SerializedName("whatsapp_manager_marketing_messages_max_price_enroll_status")
+  private String mWhatsappManagerMarketingMessagesMaxPriceEnrollStatus = null;
   protected static Gson gson = null;
 
   WhatsAppBusinessAccount() {
@@ -625,6 +627,10 @@ public class WhatsAppBusinessAccount extends APINode {
 
   public EnumWhatsappBusinessManagerMessagingLimit getFieldWhatsappBusinessManagerMessagingLimit() {
     return mWhatsappBusinessManagerMessagingLimit;
+  }
+
+  public String getFieldWhatsappManagerMarketingMessagesMaxPriceEnrollStatus() {
+    return mWhatsappManagerMarketingMessagesMaxPriceEnrollStatus;
   }
 
 
@@ -3324,6 +3330,7 @@ public class WhatsAppBusinessAccount extends APINode {
       "is_primary_device_delivery_only",
       "language",
       "library_template_body_inputs",
+      "library_template_body_param_inputs",
       "library_template_button_inputs",
       "library_template_name",
       "message_send_ttl_seconds",
@@ -3484,6 +3491,15 @@ public class WhatsAppBusinessAccount extends APINode {
     }
     public APIRequestCreateMessageTemplate setLibraryTemplateBodyInputs (String libraryTemplateBodyInputs) {
       this.setParam("library_template_body_inputs", libraryTemplateBodyInputs);
+      return this;
+    }
+
+    public APIRequestCreateMessageTemplate setLibraryTemplateBodyParamInputs (List<Map<String, String>> libraryTemplateBodyParamInputs) {
+      this.setParam("library_template_body_param_inputs", libraryTemplateBodyParamInputs);
+      return this;
+    }
+    public APIRequestCreateMessageTemplate setLibraryTemplateBodyParamInputs (String libraryTemplateBodyParamInputs) {
+      this.setParam("library_template_body_param_inputs", libraryTemplateBodyParamInputs);
       return this;
     }
 
@@ -7098,6 +7114,7 @@ public class WhatsAppBusinessAccount extends APINode {
       "template_auto_archival_enabled",
       "timezone_id",
       "whatsapp_business_manager_messaging_limit",
+      "whatsapp_manager_marketing_messages_max_price_enroll_status",
     };
 
     @Override
@@ -7393,6 +7410,13 @@ public class WhatsAppBusinessAccount extends APINode {
       this.requestField("whatsapp_business_manager_messaging_limit", value);
       return this;
     }
+    public APIRequestGet requestWhatsappManagerMarketingMessagesMaxPriceEnrollStatusField () {
+      return this.requestWhatsappManagerMarketingMessagesMaxPriceEnrollStatusField(true);
+    }
+    public APIRequestGet requestWhatsappManagerMarketingMessagesMaxPriceEnrollStatusField (boolean value) {
+      this.requestField("whatsapp_manager_marketing_messages_max_price_enroll_status", value);
+      return this;
+    }
   }
 
   public static class APIRequestUpdate extends APIRequest<WhatsAppBusinessAccount> {
@@ -7408,6 +7432,7 @@ public class WhatsAppBusinessAccount extends APINode {
       "disable_marketing_messages_on_cloud_api",
       "is_enabled_for_insights",
       "template_auto_archival_enabled",
+      "whatsapp_manager_marketing_messages_max_price_enroll_status",
     };
 
     public static final String[] FIELDS = {
@@ -7512,6 +7537,15 @@ public class WhatsAppBusinessAccount extends APINode {
       return this;
     }
 
+    public APIRequestUpdate setWhatsappManagerMarketingMessagesMaxPriceEnrollStatus (WhatsAppBusinessAccount.EnumWhatsappManagerMarketingMessagesMaxPriceEnrollStatus whatsappManagerMarketingMessagesMaxPriceEnrollStatus) {
+      this.setParam("whatsapp_manager_marketing_messages_max_price_enroll_status", whatsappManagerMarketingMessagesMaxPriceEnrollStatus);
+      return this;
+    }
+    public APIRequestUpdate setWhatsappManagerMarketingMessagesMaxPriceEnrollStatus (String whatsappManagerMarketingMessagesMaxPriceEnrollStatus) {
+      this.setParam("whatsapp_manager_marketing_messages_max_price_enroll_status", whatsappManagerMarketingMessagesMaxPriceEnrollStatus);
+      return this;
+    }
+
     public APIRequestUpdate requestAllFields () {
       return this.requestAllFields(true);
     }
@@ -7605,6 +7639,25 @@ public class WhatsAppBusinessAccount extends APINode {
       private String value;
 
       private EnumWhatsappBusinessManagerMessagingLimit(String value) {
+        this.value = value;
+      }
+
+      @Override
+      public String toString() {
+        return value;
+      }
+  }
+
+  public static enum EnumWhatsappManagerMarketingMessagesMaxPriceEnrollStatus {
+      @SerializedName("OPT_IN")
+      VALUE_OPT_IN("OPT_IN"),
+      @SerializedName("OPT_OUT")
+      VALUE_OPT_OUT("OPT_OUT"),
+      ;
+
+      private String value;
+
+      private EnumWhatsappManagerMarketingMessagesMaxPriceEnrollStatus(String value) {
         this.value = value;
       }
 
@@ -8207,6 +8260,7 @@ public class WhatsAppBusinessAccount extends APINode {
     this.mTemplateAutoArchivalEnabled = instance.mTemplateAutoArchivalEnabled;
     this.mTimezoneId = instance.mTimezoneId;
     this.mWhatsappBusinessManagerMessagingLimit = instance.mWhatsappBusinessManagerMessagingLimit;
+    this.mWhatsappManagerMarketingMessagesMaxPriceEnrollStatus = instance.mWhatsappManagerMarketingMessagesMaxPriceEnrollStatus;
     this.context = instance.context;
     this.rawValue = instance.rawValue;
     return this;

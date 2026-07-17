@@ -544,6 +544,8 @@ public class ThirdPartyPartnerViewabilityRequest extends APINode {
       VALUE_FACEBOOK("FACEBOOK"),
       @SerializedName("INSTAGRAM")
       VALUE_INSTAGRAM("INSTAGRAM"),
+      @SerializedName("THREADS")
+      VALUE_THREADS("THREADS"),
       ;
 
       private String value;

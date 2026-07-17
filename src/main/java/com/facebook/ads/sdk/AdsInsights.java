@@ -237,6 +237,10 @@ public class AdsInsights extends APINode {
   private String mCreativeDiversityLabel = null;
   @SerializedName("creative_diversity_score")
   private String mCreativeDiversityScore = null;
+  @SerializedName("creative_fatigue_summary")
+  private List<Object> mCreativeFatigueSummary = null;
+  @SerializedName("creative_fatigued_ads")
+  private List<Object> mCreativeFatiguedAds = null;
   @SerializedName("creative_media_type")
   private String mCreativeMediaType = null;
   @SerializedName("ctr")
@@ -397,8 +401,6 @@ public class AdsInsights extends APINode {
   private String mResultValuesPerformanceIndicator = null;
   @SerializedName("results")
   private List<Object> mResults = null;
-  @SerializedName("shop_clicks")
-  private String mShopClicks = null;
   @SerializedName("shops_assisted_purchases")
   private String mShopsAssistedPurchases = null;
   @SerializedName("social_spend")
@@ -1951,6 +1953,24 @@ public class AdsInsights extends APINode {
     return this;
   }
 
+  public List<Object> getFieldCreativeFatigueSummary() {
+    return mCreativeFatigueSummary;
+  }
+
+  public AdsInsights setFieldCreativeFatigueSummary(List<Object> value) {
+    this.mCreativeFatigueSummary = value;
+    return this;
+  }
+
+  public List<Object> getFieldCreativeFatiguedAds() {
+    return mCreativeFatiguedAds;
+  }
+
+  public AdsInsights setFieldCreativeFatiguedAds(List<Object> value) {
+    this.mCreativeFatiguedAds = value;
+    return this;
+  }
+
   public String getFieldCreativeMediaType() {
     return mCreativeMediaType;
   }
@@ -2703,15 +2723,6 @@ public class AdsInsights extends APINode {
 
   public AdsInsights setFieldResults(List<Object> value) {
     this.mResults = value;
-    return this;
-  }
-
-  public String getFieldShopClicks() {
-    return mShopClicks;
-  }
-
-  public AdsInsights setFieldShopClicks(String value) {
-    this.mShopClicks = value;
     return this;
   }
 
@@ -3578,10 +3589,14 @@ public class AdsInsights extends APINode {
       VALUE_1D_CLICK("1d_click"),
       @SerializedName("1d_ev")
       VALUE_1D_EV("1d_ev"),
+      @SerializedName("1d_sequenced")
+      VALUE_1D_SEQUENCED("1d_sequenced"),
       @SerializedName("1d_view")
       VALUE_1D_VIEW("1d_view"),
       @SerializedName("28d_click")
       VALUE_28D_CLICK("28d_click"),
+      @SerializedName("28d_sequenced")
+      VALUE_28D_SEQUENCED("28d_sequenced"),
       @SerializedName("28d_view")
       VALUE_28D_VIEW("28d_view"),
       @SerializedName("28d_view_all_conversions")
@@ -3590,16 +3605,26 @@ public class AdsInsights extends APINode {
       VALUE_28D_VIEW_FIRST_CONVERSION("28d_view_first_conversion"),
       @SerializedName("7d_click")
       VALUE_7D_CLICK("7d_click"),
+      @SerializedName("7d_sequenced")
+      VALUE_7D_SEQUENCED("7d_sequenced"),
       @SerializedName("7d_view")
       VALUE_7D_VIEW("7d_view"),
       @SerializedName("7d_view_all_conversions")
       VALUE_7D_VIEW_ALL_CONVERSIONS("7d_view_all_conversions"),
       @SerializedName("7d_view_first_conversion")
       VALUE_7D_VIEW_FIRST_CONVERSION("7d_view_first_conversion"),
+      @SerializedName("custom")
+      VALUE_CUSTOM("custom"),
       @SerializedName("dda")
       VALUE_DDA("dda"),
       @SerializedName("default")
       VALUE_DEFAULT("default"),
+      @SerializedName("incrementality")
+      VALUE_INCREMENTALITY("incrementality"),
+      @SerializedName("incrementality_all_conversions")
+      VALUE_INCREMENTALITY_ALL_CONVERSIONS("incrementality_all_conversions"),
+      @SerializedName("incrementality_first_conversion")
+      VALUE_INCREMENTALITY_FIRST_CONVERSION("incrementality_first_conversion"),
       @SerializedName("skan_click")
       VALUE_SKAN_CLICK("skan_click"),
       @SerializedName("skan_click_second_postback")
@@ -4127,6 +4152,8 @@ public class AdsInsights extends APINode {
     this.mCreativeDiversityData = instance.mCreativeDiversityData;
     this.mCreativeDiversityLabel = instance.mCreativeDiversityLabel;
     this.mCreativeDiversityScore = instance.mCreativeDiversityScore;
+    this.mCreativeFatigueSummary = instance.mCreativeFatigueSummary;
+    this.mCreativeFatiguedAds = instance.mCreativeFatiguedAds;
     this.mCreativeMediaType = instance.mCreativeMediaType;
     this.mCtr = instance.mCtr;
     this.mDateStart = instance.mDateStart;
@@ -4207,7 +4234,6 @@ public class AdsInsights extends APINode {
     this.mResultRate = instance.mResultRate;
     this.mResultValuesPerformanceIndicator = instance.mResultValuesPerformanceIndicator;
     this.mResults = instance.mResults;
-    this.mShopClicks = instance.mShopClicks;
     this.mShopsAssistedPurchases = instance.mShopsAssistedPurchases;
     this.mSocialSpend = instance.mSocialSpend;
     this.mSpend = instance.mSpend;

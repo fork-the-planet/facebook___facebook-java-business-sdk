@@ -5084,6 +5084,7 @@ public class Group extends APINode {
       "privacy",
       "profile_id",
       "provenance_info",
+      "provenance_metadata",
       "proxied_app_id",
       "published",
       "qn",
@@ -5415,6 +5416,15 @@ public class Group extends APINode {
     }
     public APIRequestCreatePhoto setProvenanceInfo (String provenanceInfo) {
       this.setParam("provenance_info", provenanceInfo);
+      return this;
+    }
+
+    public APIRequestCreatePhoto setProvenanceMetadata (Map<String, String> provenanceMetadata) {
+      this.setParam("provenance_metadata", provenanceMetadata);
+      return this;
+    }
+    public APIRequestCreatePhoto setProvenanceMetadata (String provenanceMetadata) {
+      this.setParam("provenance_metadata", provenanceMetadata);
       return this;
     }
 

@@ -3523,6 +3523,7 @@ public class BusinessAssetGroup extends APINode {
       "media_count",
       "mentioned_comment",
       "mentioned_media",
+      "mini_shop_storefront",
       "name",
       "owner_business",
       "profile_picture_url",
@@ -3711,6 +3712,13 @@ public class BusinessAssetGroup extends APINode {
     }
     public APIRequestGetContainedInstagramAccounts requestMentionedMediaField (boolean value) {
       this.requestField("mentioned_media", value);
+      return this;
+    }
+    public APIRequestGetContainedInstagramAccounts requestMiniShopStorefrontField () {
+      return this.requestMiniShopStorefrontField(true);
+    }
+    public APIRequestGetContainedInstagramAccounts requestMiniShopStorefrontField (boolean value) {
+      this.requestField("mini_shop_storefront", value);
       return this;
     }
     public APIRequestGetContainedInstagramAccounts requestNameField () {

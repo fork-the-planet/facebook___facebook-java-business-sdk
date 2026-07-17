@@ -3750,6 +3750,7 @@ public class CustomAudience extends APINode {
       return lastResponse;
     }
     public static final String[] PARAMS = {
+      "acting_account_id",
       "allowed_domains",
       "audience_labels",
       "claim_objective",
@@ -3833,6 +3834,15 @@ public class CustomAudience extends APINode {
       return this;
     }
 
+
+    public APIRequestUpdate setActingAccountId (Long actingAccountId) {
+      this.setParam("acting_account_id", actingAccountId);
+      return this;
+    }
+    public APIRequestUpdate setActingAccountId (String actingAccountId) {
+      this.setParam("acting_account_id", actingAccountId);
+      return this;
+    }
 
     public APIRequestUpdate setAllowedDomains (List<String> allowedDomains) {
       this.setParam("allowed_domains", allowedDomains);
@@ -4058,22 +4068,20 @@ public class CustomAudience extends APINode {
   }
 
   public static enum EnumAudienceLabels {
-      @SerializedName("APP_INSTALLERS")
-      VALUE_APP_INSTALLERS("APP_INSTALLERS"),
       @SerializedName("APP_USERS")
       VALUE_APP_USERS("APP_USERS"),
       @SerializedName("AT_RISK")
       VALUE_AT_RISK("AT_RISK"),
       @SerializedName("CART_ABANDONERS")
       VALUE_CART_ABANDONERS("CART_ABANDONERS"),
-      @SerializedName("CUSTOMER_LEADS")
-      VALUE_CUSTOMER_LEADS("CUSTOMER_LEADS"),
       @SerializedName("DISENGAGED")
       VALUE_DISENGAGED("DISENGAGED"),
       @SerializedName("DISQUALIFIED_LEADS")
       VALUE_DISQUALIFIED_LEADS("DISQUALIFIED_LEADS"),
       @SerializedName("ENGAGED_USERS")
       VALUE_ENGAGED_USERS("ENGAGED_USERS"),
+      @SerializedName("GENERAL_CUSTOMERS")
+      VALUE_GENERAL_CUSTOMERS("GENERAL_CUSTOMERS"),
       @SerializedName("HIGH_VALUE_CUSTOMERS")
       VALUE_HIGH_VALUE_CUSTOMERS("HIGH_VALUE_CUSTOMERS"),
       @SerializedName("LOW_VALUE_CUSTOMERS")
@@ -4084,18 +4092,12 @@ public class CustomAudience extends APINode {
       VALUE_OTHER_2("OTHER_2"),
       @SerializedName("OTHER_3")
       VALUE_OTHER_3("OTHER_3"),
-      @SerializedName("PERSONAS")
-      VALUE_PERSONAS("PERSONAS"),
       @SerializedName("QUALIFIED_LEADS")
       VALUE_QUALIFIED_LEADS("QUALIFIED_LEADS"),
       @SerializedName("RECENT_PURCHASERS")
       VALUE_RECENT_PURCHASERS("RECENT_PURCHASERS"),
-      @SerializedName("RESTRICTED_USERS")
-      VALUE_RESTRICTED_USERS("RESTRICTED_USERS"),
       @SerializedName("TRIAL_USERS")
       VALUE_TRIAL_USERS("TRIAL_USERS"),
-      @SerializedName("UNWANTED_CUSTOMERS")
-      VALUE_UNWANTED_CUSTOMERS("UNWANTED_CUSTOMERS"),
       ;
 
       private String value;

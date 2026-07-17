@@ -290,6 +290,7 @@ public class ShadowIGHashtag extends APINode {
 
     public static final String[] FIELDS = {
       "alt_text",
+      "audio_id",
       "boost_eligibility_info",
       "caption",
       "comments_count",
@@ -299,6 +300,7 @@ public class ShadowIGHashtag extends APINode {
       "has_slider",
       "id",
       "ig_id",
+      "is_ai_generated",
       "is_comment_enabled",
       "is_shared_to_feed",
       "legacy_instagram_media_id",
@@ -425,6 +427,13 @@ public class ShadowIGHashtag extends APINode {
       this.requestField("alt_text", value);
       return this;
     }
+    public APIRequestGetRecentMedia requestAudioIdField () {
+      return this.requestAudioIdField(true);
+    }
+    public APIRequestGetRecentMedia requestAudioIdField (boolean value) {
+      this.requestField("audio_id", value);
+      return this;
+    }
     public APIRequestGetRecentMedia requestBoostEligibilityInfoField () {
       return this.requestBoostEligibilityInfoField(true);
     }
@@ -486,6 +495,13 @@ public class ShadowIGHashtag extends APINode {
     }
     public APIRequestGetRecentMedia requestIgIdField (boolean value) {
       this.requestField("ig_id", value);
+      return this;
+    }
+    public APIRequestGetRecentMedia requestIsAiGeneratedField () {
+      return this.requestIsAiGeneratedField(true);
+    }
+    public APIRequestGetRecentMedia requestIsAiGeneratedField (boolean value) {
+      this.requestField("is_ai_generated", value);
       return this;
     }
     public APIRequestGetRecentMedia requestIsCommentEnabledField () {
@@ -657,6 +673,7 @@ public class ShadowIGHashtag extends APINode {
 
     public static final String[] FIELDS = {
       "alt_text",
+      "audio_id",
       "boost_eligibility_info",
       "caption",
       "comments_count",
@@ -666,6 +683,7 @@ public class ShadowIGHashtag extends APINode {
       "has_slider",
       "id",
       "ig_id",
+      "is_ai_generated",
       "is_comment_enabled",
       "is_shared_to_feed",
       "legacy_instagram_media_id",
@@ -792,6 +810,13 @@ public class ShadowIGHashtag extends APINode {
       this.requestField("alt_text", value);
       return this;
     }
+    public APIRequestGetTopMedia requestAudioIdField () {
+      return this.requestAudioIdField(true);
+    }
+    public APIRequestGetTopMedia requestAudioIdField (boolean value) {
+      this.requestField("audio_id", value);
+      return this;
+    }
     public APIRequestGetTopMedia requestBoostEligibilityInfoField () {
       return this.requestBoostEligibilityInfoField(true);
     }
@@ -853,6 +878,13 @@ public class ShadowIGHashtag extends APINode {
     }
     public APIRequestGetTopMedia requestIgIdField (boolean value) {
       this.requestField("ig_id", value);
+      return this;
+    }
+    public APIRequestGetTopMedia requestIsAiGeneratedField () {
+      return this.requestIsAiGeneratedField(true);
+    }
+    public APIRequestGetTopMedia requestIsAiGeneratedField (boolean value) {
+      this.requestField("is_ai_generated", value);
       return this;
     }
     public APIRequestGetTopMedia requestIsCommentEnabledField () {

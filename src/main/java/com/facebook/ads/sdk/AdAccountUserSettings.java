@@ -59,6 +59,8 @@ public class AdAccountUserSettings extends APINode {
   private Boolean mAutoReviewVideoCaption = null;
   @SerializedName("budget_optimization_quick_view_created")
   private Boolean mBudgetOptimizationQuickViewCreated = null;
+  @SerializedName("budget_pool_qv_created")
+  private Boolean mBudgetPoolQvCreated = null;
   @SerializedName("campaign_overview_columns")
   private List<String> mCampaignOverviewColumns = null;
   @SerializedName("column_suggestion_status")
@@ -438,6 +440,10 @@ public class AdAccountUserSettings extends APINode {
     return mBudgetOptimizationQuickViewCreated;
   }
 
+  public Boolean getFieldBudgetPoolQvCreated() {
+    return mBudgetPoolQvCreated;
+  }
+
   public List<String> getFieldCampaignOverviewColumns() {
     return mCampaignOverviewColumns;
   }
@@ -715,6 +721,7 @@ public class AdAccountUserSettings extends APINode {
       "ads_manager_footer_row_toast_impressions",
       "auto_review_video_caption",
       "budget_optimization_quick_view_created",
+      "budget_pool_qv_created",
       "campaign_overview_columns",
       "column_suggestion_status",
       "conditional_formatting_rules",
@@ -931,6 +938,13 @@ public class AdAccountUserSettings extends APINode {
     }
     public APIRequestGet requestBudgetOptimizationQuickViewCreatedField (boolean value) {
       this.requestField("budget_optimization_quick_view_created", value);
+      return this;
+    }
+    public APIRequestGet requestBudgetPoolQvCreatedField () {
+      return this.requestBudgetPoolQvCreatedField(true);
+    }
+    public APIRequestGet requestBudgetPoolQvCreatedField (boolean value) {
+      this.requestField("budget_pool_qv_created", value);
       return this;
     }
     public APIRequestGet requestCampaignOverviewColumnsField () {
@@ -1457,6 +1471,7 @@ public class AdAccountUserSettings extends APINode {
     this.mAdsManagerFooterRowToastImpressions = instance.mAdsManagerFooterRowToastImpressions;
     this.mAutoReviewVideoCaption = instance.mAutoReviewVideoCaption;
     this.mBudgetOptimizationQuickViewCreated = instance.mBudgetOptimizationQuickViewCreated;
+    this.mBudgetPoolQvCreated = instance.mBudgetPoolQvCreated;
     this.mCampaignOverviewColumns = instance.mCampaignOverviewColumns;
     this.mColumnSuggestionStatus = instance.mColumnSuggestionStatus;
     this.mConditionalFormattingRules = instance.mConditionalFormattingRules;

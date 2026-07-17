@@ -40,27 +40,23 @@ import com.facebook.ads.sdk.APIException.MalformedResponseException;
  * pull request for this class.
  *
  */
-public class IGShoppingReviewStatus extends APINode {
-  @SerializedName("onsite_eligibility")
-  private IGShoppingReviewStatusOnsiteEligibility mOnsiteEligibility = null;
-  @SerializedName("reasons")
-  private List<IGShoppingReviewStatusReasonWithHelpMessage> mReasons = null;
-  @SerializedName("status")
-  private String mStatus = null;
+public class AdAccountFeaturePreferencesPost extends APINode {
+  @SerializedName("id")
+  private String mId = null;
   protected static Gson gson = null;
 
-  public IGShoppingReviewStatus() {
+  public AdAccountFeaturePreferencesPost() {
   }
 
   public String getId() {
-    return null;
+    return getFieldId().toString();
   }
-  public static IGShoppingReviewStatus loadJSON(String json, APIContext context, String header) {
-    IGShoppingReviewStatus igShoppingReviewStatus = getGson().fromJson(json, IGShoppingReviewStatus.class);
+  public static AdAccountFeaturePreferencesPost loadJSON(String json, APIContext context, String header) {
+    AdAccountFeaturePreferencesPost adAccountFeaturePreferencesPost = getGson().fromJson(json, AdAccountFeaturePreferencesPost.class);
     if (context.isDebug()) {
       JsonParser parser = new JsonParser();
       JsonElement o1 = parser.parse(json);
-      JsonElement o2 = parser.parse(igShoppingReviewStatus.toString());
+      JsonElement o2 = parser.parse(adAccountFeaturePreferencesPost.toString());
       if (o1.getAsJsonObject().get("__fb_trace_id__") != null) {
         o2.getAsJsonObject().add("__fb_trace_id__", o1.getAsJsonObject().get("__fb_trace_id__"));
       }
@@ -70,14 +66,14 @@ public class IGShoppingReviewStatus extends APINode {
         context.log("[Object]" + o2);
       }
     }
-    igShoppingReviewStatus.context = context;
-    igShoppingReviewStatus.rawValue = json;
-    igShoppingReviewStatus.header = header;
-    return igShoppingReviewStatus;
+    adAccountFeaturePreferencesPost.context = context;
+    adAccountFeaturePreferencesPost.rawValue = json;
+    adAccountFeaturePreferencesPost.header = header;
+    return adAccountFeaturePreferencesPost;
   }
 
-  public static APINodeList<IGShoppingReviewStatus> parseResponse(String json, APIContext context, APIRequest request, String header) throws MalformedResponseException {
-    APINodeList<IGShoppingReviewStatus> igShoppingReviewStatuss = new APINodeList<IGShoppingReviewStatus>(request, json, header);
+  public static APINodeList<AdAccountFeaturePreferencesPost> parseResponse(String json, APIContext context, APIRequest request, String header) throws MalformedResponseException {
+    APINodeList<AdAccountFeaturePreferencesPost> adAccountFeaturePreferencesPosts = new APINodeList<AdAccountFeaturePreferencesPost>(request, json, header);
     JsonArray arr;
     JsonObject obj;
     JsonParser parser = new JsonParser();
@@ -88,9 +84,9 @@ public class IGShoppingReviewStatus extends APINode {
         // First, check if it's a pure JSON Array
         arr = result.getAsJsonArray();
         for (int i = 0; i < arr.size(); i++) {
-          igShoppingReviewStatuss.add(loadJSON(arr.get(i).getAsJsonObject().toString(), context, header));
+          adAccountFeaturePreferencesPosts.add(loadJSON(arr.get(i).getAsJsonObject().toString(), context, header));
         };
-        return igShoppingReviewStatuss;
+        return adAccountFeaturePreferencesPosts;
       } else if (result.isJsonObject()) {
         obj = result.getAsJsonObject();
         if (obj.has("data")) {
@@ -100,20 +96,20 @@ public class IGShoppingReviewStatus extends APINode {
                 JsonObject cursors = paging.get("cursors").getAsJsonObject();
                 String before = cursors.has("before") ? cursors.get("before").getAsString() : null;
                 String after = cursors.has("after") ? cursors.get("after").getAsString() : null;
-                igShoppingReviewStatuss.setCursors(before, after);
+                adAccountFeaturePreferencesPosts.setCursors(before, after);
             }
             String previous = paging.has("previous") ? paging.get("previous").getAsString() : null;
             String next = paging.has("next") ? paging.get("next").getAsString() : null;
-            igShoppingReviewStatuss.setPaging(previous, next);
+            adAccountFeaturePreferencesPosts.setPaging(previous, next);
             if (context.hasAppSecret()) {
-              igShoppingReviewStatuss.setAppSecret(context.getAppSecretProof());
+              adAccountFeaturePreferencesPosts.setAppSecret(context.getAppSecretProof());
             }
           }
           if (obj.get("data").isJsonArray()) {
             // Second, check if it's a JSON array with "data"
             arr = obj.get("data").getAsJsonArray();
             for (int i = 0; i < arr.size(); i++) {
-              igShoppingReviewStatuss.add(loadJSON(arr.get(i).getAsJsonObject().toString(), context, header));
+              adAccountFeaturePreferencesPosts.add(loadJSON(arr.get(i).getAsJsonObject().toString(), context, header));
             };
           } else if (obj.get("data").isJsonObject()) {
             // Third, check if it's a JSON object with "data"
@@ -124,23 +120,23 @@ public class IGShoppingReviewStatus extends APINode {
                 isRedownload = true;
                 obj = obj.getAsJsonObject(s);
                 for (Map.Entry<String, JsonElement> entry : obj.entrySet()) {
-                  igShoppingReviewStatuss.add(loadJSON(entry.getValue().toString(), context, header));
+                  adAccountFeaturePreferencesPosts.add(loadJSON(entry.getValue().toString(), context, header));
                 }
                 break;
               }
             }
             if (!isRedownload) {
-              igShoppingReviewStatuss.add(loadJSON(obj.toString(), context, header));
+              adAccountFeaturePreferencesPosts.add(loadJSON(obj.toString(), context, header));
             }
           }
-          return igShoppingReviewStatuss;
+          return adAccountFeaturePreferencesPosts;
         } else if (obj.has("images")) {
           // Fourth, check if it's a map of image objects
           obj = obj.get("images").getAsJsonObject();
           for (Map.Entry<String, JsonElement> entry : obj.entrySet()) {
-              igShoppingReviewStatuss.add(loadJSON(entry.getValue().toString(), context, header));
+              adAccountFeaturePreferencesPosts.add(loadJSON(entry.getValue().toString(), context, header));
           }
-          return igShoppingReviewStatuss;
+          return adAccountFeaturePreferencesPosts;
         } else {
           // Fifth, check if it's an array of objects indexed by id
           boolean isIdIndexedArray = true;
@@ -157,20 +153,20 @@ public class IGShoppingReviewStatus extends APINode {
               value.getAsJsonObject().get("id") != null &&
               value.getAsJsonObject().get("id").getAsString().equals(key)
             ) {
-              igShoppingReviewStatuss.add(loadJSON(value.toString(), context, header));
+              adAccountFeaturePreferencesPosts.add(loadJSON(value.toString(), context, header));
             } else {
               isIdIndexedArray = false;
               break;
             }
           }
           if (isIdIndexedArray) {
-            return igShoppingReviewStatuss;
+            return adAccountFeaturePreferencesPosts;
           }
 
           // Sixth, check if it's pure JsonObject
-          igShoppingReviewStatuss.clear();
-          igShoppingReviewStatuss.add(loadJSON(json, context, header));
-          return igShoppingReviewStatuss;
+          adAccountFeaturePreferencesPosts.clear();
+          adAccountFeaturePreferencesPosts.add(loadJSON(json, context, header));
+          return adAccountFeaturePreferencesPosts;
         }
       }
     } catch (Exception e) {
@@ -198,40 +194,12 @@ public class IGShoppingReviewStatus extends APINode {
   }
 
 
-  public IGShoppingReviewStatusOnsiteEligibility getFieldOnsiteEligibility() {
-    return mOnsiteEligibility;
+  public String getFieldId() {
+    return mId;
   }
 
-  public IGShoppingReviewStatus setFieldOnsiteEligibility(IGShoppingReviewStatusOnsiteEligibility value) {
-    this.mOnsiteEligibility = value;
-    return this;
-  }
-
-  public IGShoppingReviewStatus setFieldOnsiteEligibility(String value) {
-    Type type = new TypeToken<IGShoppingReviewStatusOnsiteEligibility>(){}.getType();
-    this.mOnsiteEligibility = IGShoppingReviewStatusOnsiteEligibility.getGson().fromJson(value, type);
-    return this;
-  }
-  public List<IGShoppingReviewStatusReasonWithHelpMessage> getFieldReasons() {
-    return mReasons;
-  }
-
-  public IGShoppingReviewStatus setFieldReasons(List<IGShoppingReviewStatusReasonWithHelpMessage> value) {
-    this.mReasons = value;
-    return this;
-  }
-
-  public IGShoppingReviewStatus setFieldReasons(String value) {
-    Type type = new TypeToken<List<IGShoppingReviewStatusReasonWithHelpMessage>>(){}.getType();
-    this.mReasons = IGShoppingReviewStatusReasonWithHelpMessage.getGson().fromJson(value, type);
-    return this;
-  }
-  public String getFieldStatus() {
-    return mStatus;
-  }
-
-  public IGShoppingReviewStatus setFieldStatus(String value) {
-    this.mStatus = value;
+  public AdAccountFeaturePreferencesPost setFieldId(String value) {
+    this.mId = value;
     return this;
   }
 
@@ -251,19 +219,17 @@ public class IGShoppingReviewStatus extends APINode {
     return gson;
   }
 
-  public IGShoppingReviewStatus copyFrom(IGShoppingReviewStatus instance) {
-    this.mOnsiteEligibility = instance.mOnsiteEligibility;
-    this.mReasons = instance.mReasons;
-    this.mStatus = instance.mStatus;
+  public AdAccountFeaturePreferencesPost copyFrom(AdAccountFeaturePreferencesPost instance) {
+    this.mId = instance.mId;
     this.context = instance.context;
     this.rawValue = instance.rawValue;
     return this;
   }
 
-  public static APIRequest.ResponseParser<IGShoppingReviewStatus> getParser() {
-    return new APIRequest.ResponseParser<IGShoppingReviewStatus>() {
-      public APINodeList<IGShoppingReviewStatus> parseResponse(String response, APIContext context, APIRequest<IGShoppingReviewStatus> request, String header) throws MalformedResponseException {
-        return IGShoppingReviewStatus.parseResponse(response, context, request, header);
+  public static APIRequest.ResponseParser<AdAccountFeaturePreferencesPost> getParser() {
+    return new APIRequest.ResponseParser<AdAccountFeaturePreferencesPost>() {
+      public APINodeList<AdAccountFeaturePreferencesPost> parseResponse(String response, APIContext context, APIRequest<AdAccountFeaturePreferencesPost> request, String header) throws MalformedResponseException {
+        return AdAccountFeaturePreferencesPost.parseResponse(response, context, request, header);
       }
     };
   }

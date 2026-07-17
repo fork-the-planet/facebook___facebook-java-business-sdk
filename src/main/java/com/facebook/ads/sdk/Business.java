@@ -10741,6 +10741,7 @@ public class Business extends APINode {
       "template_auto_archival_enabled",
       "timezone_id",
       "whatsapp_business_manager_messaging_limit",
+      "whatsapp_manager_marketing_messages_max_price_enroll_status",
     };
 
     @Override
@@ -11034,6 +11035,13 @@ public class Business extends APINode {
     }
     public APIRequestGetClientWhatsAppBusinessAccounts requestWhatsappBusinessManagerMessagingLimitField (boolean value) {
       this.requestField("whatsapp_business_manager_messaging_limit", value);
+      return this;
+    }
+    public APIRequestGetClientWhatsAppBusinessAccounts requestWhatsappManagerMarketingMessagesMaxPriceEnrollStatusField () {
+      return this.requestWhatsappManagerMarketingMessagesMaxPriceEnrollStatusField(true);
+    }
+    public APIRequestGetClientWhatsAppBusinessAccounts requestWhatsappManagerMarketingMessagesMaxPriceEnrollStatusField (boolean value) {
+      this.requestField("whatsapp_manager_marketing_messages_max_price_enroll_status", value);
       return this;
     }
   }
@@ -14430,6 +14438,7 @@ public class Business extends APINode {
       "media_count",
       "mentioned_comment",
       "mentioned_media",
+      "mini_shop_storefront",
       "name",
       "owner_business",
       "profile_picture_url",
@@ -14620,6 +14629,13 @@ public class Business extends APINode {
       this.requestField("mentioned_media", value);
       return this;
     }
+    public APIRequestGetInstagramAccounts requestMiniShopStorefrontField () {
+      return this.requestMiniShopStorefrontField(true);
+    }
+    public APIRequestGetInstagramAccounts requestMiniShopStorefrontField (boolean value) {
+      this.requestField("mini_shop_storefront", value);
+      return this;
+    }
     public APIRequestGetInstagramAccounts requestNameField () {
       return this.requestNameField(true);
     }
@@ -14695,6 +14711,7 @@ public class Business extends APINode {
       "media_count",
       "mentioned_comment",
       "mentioned_media",
+      "mini_shop_storefront",
       "name",
       "owner_business",
       "profile_picture_url",
@@ -14883,6 +14900,13 @@ public class Business extends APINode {
     }
     public APIRequestGetInstagramBusinessAccounts requestMentionedMediaField (boolean value) {
       this.requestField("mentioned_media", value);
+      return this;
+    }
+    public APIRequestGetInstagramBusinessAccounts requestMiniShopStorefrontField () {
+      return this.requestMiniShopStorefrontField(true);
+    }
+    public APIRequestGetInstagramBusinessAccounts requestMiniShopStorefrontField (boolean value) {
+      this.requestField("mini_shop_storefront", value);
       return this;
     }
     public APIRequestGetInstagramBusinessAccounts requestNameField () {
@@ -16115,6 +16139,7 @@ public class Business extends APINode {
 
     public static final String[] FIELDS = {
       "active",
+      "associated_sgw_data_source_id",
       "blocked_event_types",
       "blocked_websites",
       "browser_agent",
@@ -16133,6 +16158,7 @@ public class Business extends APINode {
       "instance_version",
       "is_sgw_instance",
       "is_sgw_pixel_from_meta_pixel",
+      "mpc_fallback_domain",
       "partner_name",
       "pixel_id",
       "sgw_account_id",
@@ -16235,6 +16261,13 @@ public class Business extends APINode {
     }
     public APIRequestGetOpenBridgeConfigurations requestActiveField (boolean value) {
       this.requestField("active", value);
+      return this;
+    }
+    public APIRequestGetOpenBridgeConfigurations requestAssociatedSgwDataSourceIdField () {
+      return this.requestAssociatedSgwDataSourceIdField(true);
+    }
+    public APIRequestGetOpenBridgeConfigurations requestAssociatedSgwDataSourceIdField (boolean value) {
+      this.requestField("associated_sgw_data_source_id", value);
       return this;
     }
     public APIRequestGetOpenBridgeConfigurations requestBlockedEventTypesField () {
@@ -16363,6 +16396,13 @@ public class Business extends APINode {
       this.requestField("is_sgw_pixel_from_meta_pixel", value);
       return this;
     }
+    public APIRequestGetOpenBridgeConfigurations requestMpcFallbackDomainField () {
+      return this.requestMpcFallbackDomainField(true);
+    }
+    public APIRequestGetOpenBridgeConfigurations requestMpcFallbackDomainField (boolean value) {
+      this.requestField("mpc_fallback_domain", value);
+      return this;
+    }
     public APIRequestGetOpenBridgeConfigurations requestPartnerNameField () {
       return this.requestPartnerNameField(true);
     }
@@ -16409,6 +16449,7 @@ public class Business extends APINode {
     }
     public static final String[] PARAMS = {
       "active",
+      "associated_sgw_data_source_id",
       "blocked_event_types",
       "blocked_websites",
       "capi_publishing_state",
@@ -16495,6 +16536,15 @@ public class Business extends APINode {
     }
     public APIRequestCreateOpenBridgeConfiguration setActive (String active) {
       this.setParam("active", active);
+      return this;
+    }
+
+    public APIRequestCreateOpenBridgeConfiguration setAssociatedSgwDataSourceId (Long associatedSgwDataSourceId) {
+      this.setParam("associated_sgw_data_source_id", associatedSgwDataSourceId);
+      return this;
+    }
+    public APIRequestCreateOpenBridgeConfiguration setAssociatedSgwDataSourceId (String associatedSgwDataSourceId) {
+      this.setParam("associated_sgw_data_source_id", associatedSgwDataSourceId);
       return this;
     }
 
@@ -19240,6 +19290,7 @@ public class Business extends APINode {
       "media_count",
       "mentioned_comment",
       "mentioned_media",
+      "mini_shop_storefront",
       "name",
       "owner_business",
       "profile_picture_url",
@@ -19428,6 +19479,13 @@ public class Business extends APINode {
     }
     public APIRequestGetOwnedInstagramAccounts requestMentionedMediaField (boolean value) {
       this.requestField("mentioned_media", value);
+      return this;
+    }
+    public APIRequestGetOwnedInstagramAccounts requestMiniShopStorefrontField () {
+      return this.requestMiniShopStorefrontField(true);
+    }
+    public APIRequestGetOwnedInstagramAccounts requestMiniShopStorefrontField (boolean value) {
+      this.requestField("mini_shop_storefront", value);
       return this;
     }
     public APIRequestGetOwnedInstagramAccounts requestNameField () {
@@ -22130,6 +22188,7 @@ public class Business extends APINode {
       "template_auto_archival_enabled",
       "timezone_id",
       "whatsapp_business_manager_messaging_limit",
+      "whatsapp_manager_marketing_messages_max_price_enroll_status",
     };
 
     @Override
@@ -22423,6 +22482,13 @@ public class Business extends APINode {
     }
     public APIRequestGetOwnedWhatsAppBusinessAccounts requestWhatsappBusinessManagerMessagingLimitField (boolean value) {
       this.requestField("whatsapp_business_manager_messaging_limit", value);
+      return this;
+    }
+    public APIRequestGetOwnedWhatsAppBusinessAccounts requestWhatsappManagerMarketingMessagesMaxPriceEnrollStatusField () {
+      return this.requestWhatsappManagerMarketingMessagesMaxPriceEnrollStatusField(true);
+    }
+    public APIRequestGetOwnedWhatsAppBusinessAccounts requestWhatsappManagerMarketingMessagesMaxPriceEnrollStatusField (boolean value) {
+      this.requestField("whatsapp_manager_marketing_messages_max_price_enroll_status", value);
       return this;
     }
   }

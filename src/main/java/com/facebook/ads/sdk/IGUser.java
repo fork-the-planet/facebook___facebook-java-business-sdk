@@ -67,6 +67,8 @@ public class IGUser extends APINode {
   private IGComment mMentionedComment = null;
   @SerializedName("mentioned_media")
   private IGMedia mMentionedMedia = null;
+  @SerializedName("mini_shop_storefront")
+  private Shop mMiniShopStorefront = null;
   @SerializedName("name")
   private String mName = null;
   @SerializedName("owner_business")
@@ -510,6 +512,13 @@ public class IGUser extends APINode {
       mMentionedMedia.context = getContext();
     }
     return mMentionedMedia;
+  }
+
+  public Shop getFieldMiniShopStorefront() {
+    if (mMiniShopStorefront != null) {
+      mMiniShopStorefront.context = getContext();
+    }
+    return mMiniShopStorefront;
   }
 
   public String getFieldName() {
@@ -3721,6 +3730,7 @@ public class IGUser extends APINode {
       "major_audience_device_type",
       "major_audience_gender",
       "major_audience_states",
+      "platform",
       "query",
       "recommendation_type",
       "reels_interaction_rate",
@@ -3744,7 +3754,10 @@ public class IGUser extends APINode {
       "is_paid_partnership_messages_enabled",
       "messaging_id",
       "onboarded_status",
+      "page_id",
+      "page_name",
       "past_brand_partnership_partners",
+      "platforms",
       "portfolio_url",
       "profile_picture_url",
       "username",
@@ -3971,6 +3984,15 @@ public class IGUser extends APINode {
       return this;
     }
 
+    public APIRequestGetCreatorMarketPlaceCreators setPlatform (List<IGUserExportForCAM.EnumPlatform> platform) {
+      this.setParam("platform", platform);
+      return this;
+    }
+    public APIRequestGetCreatorMarketPlaceCreators setPlatform (String platform) {
+      this.setParam("platform", platform);
+      return this;
+    }
+
     public APIRequestGetCreatorMarketPlaceCreators setQuery (String query) {
       this.setParam("query", query);
       return this;
@@ -4153,11 +4175,32 @@ public class IGUser extends APINode {
       this.requestField("onboarded_status", value);
       return this;
     }
+    public APIRequestGetCreatorMarketPlaceCreators requestPageIdField () {
+      return this.requestPageIdField(true);
+    }
+    public APIRequestGetCreatorMarketPlaceCreators requestPageIdField (boolean value) {
+      this.requestField("page_id", value);
+      return this;
+    }
+    public APIRequestGetCreatorMarketPlaceCreators requestPageNameField () {
+      return this.requestPageNameField(true);
+    }
+    public APIRequestGetCreatorMarketPlaceCreators requestPageNameField (boolean value) {
+      this.requestField("page_name", value);
+      return this;
+    }
     public APIRequestGetCreatorMarketPlaceCreators requestPastBrandPartnershipPartnersField () {
       return this.requestPastBrandPartnershipPartnersField(true);
     }
     public APIRequestGetCreatorMarketPlaceCreators requestPastBrandPartnershipPartnersField (boolean value) {
       this.requestField("past_brand_partnership_partners", value);
+      return this;
+    }
+    public APIRequestGetCreatorMarketPlaceCreators requestPlatformsField () {
+      return this.requestPlatformsField(true);
+    }
+    public APIRequestGetCreatorMarketPlaceCreators requestPlatformsField (boolean value) {
+      this.requestField("platforms", value);
       return this;
     }
     public APIRequestGetCreatorMarketPlaceCreators requestPortfolioUrlField () {
@@ -4878,6 +4921,7 @@ public class IGUser extends APINode {
 
     public static final String[] FIELDS = {
       "alt_text",
+      "audio_id",
       "boost_eligibility_info",
       "caption",
       "comments_count",
@@ -4887,6 +4931,7 @@ public class IGUser extends APINode {
       "has_slider",
       "id",
       "ig_id",
+      "is_ai_generated",
       "is_comment_enabled",
       "is_shared_to_feed",
       "legacy_instagram_media_id",
@@ -5018,6 +5063,13 @@ public class IGUser extends APINode {
       this.requestField("alt_text", value);
       return this;
     }
+    public APIRequestGetLiveMedia requestAudioIdField () {
+      return this.requestAudioIdField(true);
+    }
+    public APIRequestGetLiveMedia requestAudioIdField (boolean value) {
+      this.requestField("audio_id", value);
+      return this;
+    }
     public APIRequestGetLiveMedia requestBoostEligibilityInfoField () {
       return this.requestBoostEligibilityInfoField(true);
     }
@@ -5079,6 +5131,13 @@ public class IGUser extends APINode {
     }
     public APIRequestGetLiveMedia requestIgIdField (boolean value) {
       this.requestField("ig_id", value);
+      return this;
+    }
+    public APIRequestGetLiveMedia requestIsAiGeneratedField () {
+      return this.requestIsAiGeneratedField(true);
+    }
+    public APIRequestGetLiveMedia requestIsAiGeneratedField (boolean value) {
+      this.requestField("is_ai_generated", value);
       return this;
     }
     public APIRequestGetLiveMedia requestIsCommentEnabledField () {
@@ -5251,6 +5310,7 @@ public class IGUser extends APINode {
 
     public static final String[] FIELDS = {
       "alt_text",
+      "audio_id",
       "boost_eligibility_info",
       "caption",
       "comments_count",
@@ -5260,6 +5320,7 @@ public class IGUser extends APINode {
       "has_slider",
       "id",
       "ig_id",
+      "is_ai_generated",
       "is_comment_enabled",
       "is_shared_to_feed",
       "legacy_instagram_media_id",
@@ -5391,6 +5452,13 @@ public class IGUser extends APINode {
       this.requestField("alt_text", value);
       return this;
     }
+    public APIRequestGetMedia requestAudioIdField () {
+      return this.requestAudioIdField(true);
+    }
+    public APIRequestGetMedia requestAudioIdField (boolean value) {
+      this.requestField("audio_id", value);
+      return this;
+    }
     public APIRequestGetMedia requestBoostEligibilityInfoField () {
       return this.requestBoostEligibilityInfoField(true);
     }
@@ -5452,6 +5520,13 @@ public class IGUser extends APINode {
     }
     public APIRequestGetMedia requestIgIdField (boolean value) {
       this.requestField("ig_id", value);
+      return this;
+    }
+    public APIRequestGetMedia requestIsAiGeneratedField () {
+      return this.requestIsAiGeneratedField(true);
+    }
+    public APIRequestGetMedia requestIsAiGeneratedField (boolean value) {
+      this.requestField("is_ai_generated", value);
       return this;
     }
     public APIRequestGetMedia requestIsCommentEnabledField () {
@@ -5627,6 +5702,7 @@ public class IGUser extends APINode {
       "collaborators",
       "cover_url",
       "image_url",
+      "is_ai_generated",
       "is_carousel_item",
       "is_paid_partnership",
       "location_id",
@@ -5751,6 +5827,15 @@ public class IGUser extends APINode {
 
     public APIRequestCreateMedia setImageUrl (String imageUrl) {
       this.setParam("image_url", imageUrl);
+      return this;
+    }
+
+    public APIRequestCreateMedia setIsAiGenerated (Boolean isAiGenerated) {
+      this.setParam("is_ai_generated", isAiGenerated);
+      return this;
+    }
+    public APIRequestCreateMedia setIsAiGenerated (String isAiGenerated) {
+      this.setParam("is_ai_generated", isAiGenerated);
       return this;
     }
 
@@ -6997,6 +7082,7 @@ public class IGUser extends APINode {
 
     public static final String[] FIELDS = {
       "alt_text",
+      "audio_id",
       "boost_eligibility_info",
       "caption",
       "comments_count",
@@ -7006,6 +7092,7 @@ public class IGUser extends APINode {
       "has_slider",
       "id",
       "ig_id",
+      "is_ai_generated",
       "is_comment_enabled",
       "is_shared_to_feed",
       "legacy_instagram_media_id",
@@ -7127,6 +7214,13 @@ public class IGUser extends APINode {
       this.requestField("alt_text", value);
       return this;
     }
+    public APIRequestGetStories requestAudioIdField () {
+      return this.requestAudioIdField(true);
+    }
+    public APIRequestGetStories requestAudioIdField (boolean value) {
+      this.requestField("audio_id", value);
+      return this;
+    }
     public APIRequestGetStories requestBoostEligibilityInfoField () {
       return this.requestBoostEligibilityInfoField(true);
     }
@@ -7188,6 +7282,13 @@ public class IGUser extends APINode {
     }
     public APIRequestGetStories requestIgIdField (boolean value) {
       this.requestField("ig_id", value);
+      return this;
+    }
+    public APIRequestGetStories requestIsAiGeneratedField () {
+      return this.requestIsAiGeneratedField(true);
+    }
+    public APIRequestGetStories requestIsAiGeneratedField (boolean value) {
+      this.requestField("is_ai_generated", value);
       return this;
     }
     public APIRequestGetStories requestIsCommentEnabledField () {
@@ -7354,10 +7455,14 @@ public class IGUser extends APINode {
       return lastResponse;
     }
     public static final String[] PARAMS = {
+      "media_type",
+      "posted_after",
+      "posted_before",
     };
 
     public static final String[] FIELDS = {
       "alt_text",
+      "audio_id",
       "boost_eligibility_info",
       "caption",
       "comments_count",
@@ -7367,6 +7472,7 @@ public class IGUser extends APINode {
       "has_slider",
       "id",
       "ig_id",
+      "is_ai_generated",
       "is_comment_enabled",
       "is_shared_to_feed",
       "legacy_instagram_media_id",
@@ -7445,6 +7551,21 @@ public class IGUser extends APINode {
     }
 
 
+    public APIRequestGetTags setMediaType (String mediaType) {
+      this.setParam("media_type", mediaType);
+      return this;
+    }
+
+    public APIRequestGetTags setPostedAfter (String postedAfter) {
+      this.setParam("posted_after", postedAfter);
+      return this;
+    }
+
+    public APIRequestGetTags setPostedBefore (String postedBefore) {
+      this.setParam("posted_before", postedBefore);
+      return this;
+    }
+
     public APIRequestGetTags requestAllFields () {
       return this.requestAllFields(true);
     }
@@ -7486,6 +7607,13 @@ public class IGUser extends APINode {
     }
     public APIRequestGetTags requestAltTextField (boolean value) {
       this.requestField("alt_text", value);
+      return this;
+    }
+    public APIRequestGetTags requestAudioIdField () {
+      return this.requestAudioIdField(true);
+    }
+    public APIRequestGetTags requestAudioIdField (boolean value) {
+      this.requestField("audio_id", value);
       return this;
     }
     public APIRequestGetTags requestBoostEligibilityInfoField () {
@@ -7549,6 +7677,13 @@ public class IGUser extends APINode {
     }
     public APIRequestGetTags requestIgIdField (boolean value) {
       this.requestField("ig_id", value);
+      return this;
+    }
+    public APIRequestGetTags requestIsAiGeneratedField () {
+      return this.requestIsAiGeneratedField(true);
+    }
+    public APIRequestGetTags requestIsAiGeneratedField (boolean value) {
+      this.requestField("is_ai_generated", value);
       return this;
     }
     public APIRequestGetTags requestIsCommentEnabledField () {
@@ -8199,6 +8334,7 @@ public class IGUser extends APINode {
       "media_count",
       "mentioned_comment",
       "mentioned_media",
+      "mini_shop_storefront",
       "name",
       "owner_business",
       "profile_picture_url",
@@ -8394,6 +8530,13 @@ public class IGUser extends APINode {
       this.requestField("mentioned_media", value);
       return this;
     }
+    public APIRequestGet requestMiniShopStorefrontField () {
+      return this.requestMiniShopStorefrontField(true);
+    }
+    public APIRequestGet requestMiniShopStorefrontField (boolean value) {
+      this.requestField("mini_shop_storefront", value);
+      return this;
+    }
     public APIRequestGet requestNameField () {
       return this.requestNameField(true);
     }
@@ -8535,6 +8678,7 @@ public class IGUser extends APINode {
     this.mMediaCount = instance.mMediaCount;
     this.mMentionedComment = instance.mMentionedComment;
     this.mMentionedMedia = instance.mMentionedMedia;
+    this.mMiniShopStorefront = instance.mMiniShopStorefront;
     this.mName = instance.mName;
     this.mOwnerBusiness = instance.mOwnerBusiness;
     this.mProfilePictureUrl = instance.mProfilePictureUrl;

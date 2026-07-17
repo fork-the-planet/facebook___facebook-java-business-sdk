@@ -119,6 +119,8 @@ public class LeadGenFormPreviewDetails extends APINode {
   private String mReviewYourInfoText = null;
   @SerializedName("secure_sharing_text")
   private String mSecureSharingText = null;
+  @SerializedName("secure_sharing_text_for_embedded_booking")
+  private String mSecureSharingTextForEmbeddedBooking = null;
   @SerializedName("secure_sharing_text_for_embedded_booking_calendly")
   private String mSecureSharingTextForEmbeddedBookingCalendly = null;
   @SerializedName("secure_sharing_text_for_embedded_booking_ghl")
@@ -639,6 +641,15 @@ public class LeadGenFormPreviewDetails extends APINode {
     return this;
   }
 
+  public String getFieldSecureSharingTextForEmbeddedBooking() {
+    return mSecureSharingTextForEmbeddedBooking;
+  }
+
+  public LeadGenFormPreviewDetails setFieldSecureSharingTextForEmbeddedBooking(String value) {
+    this.mSecureSharingTextForEmbeddedBooking = value;
+    return this;
+  }
+
   public String getFieldSecureSharingTextForEmbeddedBookingCalendly() {
     return mSecureSharingTextForEmbeddedBookingCalendly;
   }
@@ -776,6 +787,7 @@ public class LeadGenFormPreviewDetails extends APINode {
     this.mReturnToFacebookText = instance.mReturnToFacebookText;
     this.mReviewYourInfoText = instance.mReviewYourInfoText;
     this.mSecureSharingText = instance.mSecureSharingText;
+    this.mSecureSharingTextForEmbeddedBooking = instance.mSecureSharingTextForEmbeddedBooking;
     this.mSecureSharingTextForEmbeddedBookingCalendly = instance.mSecureSharingTextForEmbeddedBookingCalendly;
     this.mSecureSharingTextForEmbeddedBookingGhl = instance.mSecureSharingTextForEmbeddedBookingGhl;
     this.mSecureSharingTextForOptionalPrivacyPolicy = instance.mSecureSharingTextForOptionalPrivacyPolicy;

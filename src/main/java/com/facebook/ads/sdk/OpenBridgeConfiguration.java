@@ -43,6 +43,8 @@ import com.facebook.ads.sdk.APIException.MalformedResponseException;
 public class OpenBridgeConfiguration extends APINode {
   @SerializedName("active")
   private Boolean mActive = null;
+  @SerializedName("associated_sgw_data_source_id")
+  private String mAssociatedSgwDataSourceId = null;
   @SerializedName("blocked_event_types")
   private List<String> mBlockedEventTypes = null;
   @SerializedName("blocked_websites")
@@ -79,6 +81,8 @@ public class OpenBridgeConfiguration extends APINode {
   private Boolean mIsSgwInstance = null;
   @SerializedName("is_sgw_pixel_from_meta_pixel")
   private Boolean mIsSgwPixelFromMetaPixel = null;
+  @SerializedName("mpc_fallback_domain")
+  private String mMpcFallbackDomain = null;
   @SerializedName("partner_name")
   private String mPartnerName = null;
   @SerializedName("pixel_id")
@@ -315,6 +319,10 @@ public class OpenBridgeConfiguration extends APINode {
     return mActive;
   }
 
+  public String getFieldAssociatedSgwDataSourceId() {
+    return mAssociatedSgwDataSourceId;
+  }
+
   public List<String> getFieldBlockedEventTypes() {
     return mBlockedEventTypes;
   }
@@ -385,6 +393,10 @@ public class OpenBridgeConfiguration extends APINode {
 
   public Boolean getFieldIsSgwPixelFromMetaPixel() {
     return mIsSgwPixelFromMetaPixel;
+  }
+
+  public String getFieldMpcFallbackDomain() {
+    return mMpcFallbackDomain;
   }
 
   public String getFieldPartnerName() {
@@ -526,6 +538,7 @@ public class OpenBridgeConfiguration extends APINode {
 
     public static final String[] FIELDS = {
       "active",
+      "associated_sgw_data_source_id",
       "blocked_event_types",
       "blocked_websites",
       "browser_agent",
@@ -544,6 +557,7 @@ public class OpenBridgeConfiguration extends APINode {
       "instance_version",
       "is_sgw_instance",
       "is_sgw_pixel_from_meta_pixel",
+      "mpc_fallback_domain",
       "partner_name",
       "pixel_id",
       "sgw_account_id",
@@ -646,6 +660,13 @@ public class OpenBridgeConfiguration extends APINode {
     }
     public APIRequestGet requestActiveField (boolean value) {
       this.requestField("active", value);
+      return this;
+    }
+    public APIRequestGet requestAssociatedSgwDataSourceIdField () {
+      return this.requestAssociatedSgwDataSourceIdField(true);
+    }
+    public APIRequestGet requestAssociatedSgwDataSourceIdField (boolean value) {
+      this.requestField("associated_sgw_data_source_id", value);
       return this;
     }
     public APIRequestGet requestBlockedEventTypesField () {
@@ -774,6 +795,13 @@ public class OpenBridgeConfiguration extends APINode {
       this.requestField("is_sgw_pixel_from_meta_pixel", value);
       return this;
     }
+    public APIRequestGet requestMpcFallbackDomainField () {
+      return this.requestMpcFallbackDomainField(true);
+    }
+    public APIRequestGet requestMpcFallbackDomainField (boolean value) {
+      this.requestField("mpc_fallback_domain", value);
+      return this;
+    }
     public APIRequestGet requestPartnerNameField () {
       return this.requestPartnerNameField(true);
     }
@@ -820,6 +848,7 @@ public class OpenBridgeConfiguration extends APINode {
     }
     public static final String[] PARAMS = {
       "active",
+      "associated_sgw_data_source_id",
       "blocked_event_types",
       "blocked_websites",
       "capi_publishing_state",
@@ -905,6 +934,15 @@ public class OpenBridgeConfiguration extends APINode {
     }
     public APIRequestUpdate setActive (String active) {
       this.setParam("active", active);
+      return this;
+    }
+
+    public APIRequestUpdate setAssociatedSgwDataSourceId (Long associatedSgwDataSourceId) {
+      this.setParam("associated_sgw_data_source_id", associatedSgwDataSourceId);
+      return this;
+    }
+    public APIRequestUpdate setAssociatedSgwDataSourceId (String associatedSgwDataSourceId) {
+      this.setParam("associated_sgw_data_source_id", associatedSgwDataSourceId);
       return this;
     }
 
@@ -1186,6 +1224,7 @@ public class OpenBridgeConfiguration extends APINode {
 
   public OpenBridgeConfiguration copyFrom(OpenBridgeConfiguration instance) {
     this.mActive = instance.mActive;
+    this.mAssociatedSgwDataSourceId = instance.mAssociatedSgwDataSourceId;
     this.mBlockedEventTypes = instance.mBlockedEventTypes;
     this.mBlockedWebsites = instance.mBlockedWebsites;
     this.mBrowserAgent = instance.mBrowserAgent;
@@ -1204,6 +1243,7 @@ public class OpenBridgeConfiguration extends APINode {
     this.mInstanceVersion = instance.mInstanceVersion;
     this.mIsSgwInstance = instance.mIsSgwInstance;
     this.mIsSgwPixelFromMetaPixel = instance.mIsSgwPixelFromMetaPixel;
+    this.mMpcFallbackDomain = instance.mMpcFallbackDomain;
     this.mPartnerName = instance.mPartnerName;
     this.mPixelId = instance.mPixelId;
     this.mSgwAccountId = instance.mSgwAccountId;

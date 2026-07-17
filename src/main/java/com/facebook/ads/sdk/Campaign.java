@@ -1666,6 +1666,7 @@ public class Campaign extends APINode {
 
     public static final String[] FIELDS = {
       "account_id",
+      "ad_set_goal",
       "adlabels",
       "adset_schedule",
       "asset_feed_id",
@@ -1710,6 +1711,7 @@ public class Campaign extends APINode {
       "is_dynamic_creative",
       "is_incremental_attribution_enabled",
       "is_organic_ad_joint_optimized",
+      "is_sequenced_conversion_creation",
       "issues_info",
       "learning_stage_info",
       "lifetime_budget",
@@ -1883,6 +1885,13 @@ public class Campaign extends APINode {
     }
     public APIRequestGetAdSets requestAccountIdField (boolean value) {
       this.requestField("account_id", value);
+      return this;
+    }
+    public APIRequestGetAdSets requestAdSetGoalField () {
+      return this.requestAdSetGoalField(true);
+    }
+    public APIRequestGetAdSets requestAdSetGoalField (boolean value) {
+      this.requestField("ad_set_goal", value);
       return this;
     }
     public APIRequestGetAdSets requestAdlabelsField () {
@@ -2191,6 +2200,13 @@ public class Campaign extends APINode {
     }
     public APIRequestGetAdSets requestIsOrganicAdJointOptimizedField (boolean value) {
       this.requestField("is_organic_ad_joint_optimized", value);
+      return this;
+    }
+    public APIRequestGetAdSets requestIsSequencedConversionCreationField () {
+      return this.requestIsSequencedConversionCreationField(true);
+    }
+    public APIRequestGetAdSets requestIsSequencedConversionCreationField (boolean value) {
+      this.requestField("is_sequenced_conversion_creation", value);
       return this;
     }
     public APIRequestGetAdSets requestIssuesInfoField () {

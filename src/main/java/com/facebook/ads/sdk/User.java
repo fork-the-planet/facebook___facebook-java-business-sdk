@@ -7957,6 +7957,7 @@ public class User extends APINode {
       "template_auto_archival_enabled",
       "timezone_id",
       "whatsapp_business_manager_messaging_limit",
+      "whatsapp_manager_marketing_messages_max_price_enroll_status",
     };
 
     @Override
@@ -8250,6 +8251,13 @@ public class User extends APINode {
     }
     public APIRequestGetAssignedWhatsAppBusinessAccounts requestWhatsappBusinessManagerMessagingLimitField (boolean value) {
       this.requestField("whatsapp_business_manager_messaging_limit", value);
+      return this;
+    }
+    public APIRequestGetAssignedWhatsAppBusinessAccounts requestWhatsappManagerMarketingMessagesMaxPriceEnrollStatusField () {
+      return this.requestWhatsappManagerMarketingMessagesMaxPriceEnrollStatusField(true);
+    }
+    public APIRequestGetAssignedWhatsAppBusinessAccounts requestWhatsappManagerMarketingMessagesMaxPriceEnrollStatusField (boolean value) {
+      this.requestField("whatsapp_manager_marketing_messages_max_price_enroll_status", value);
       return this;
     }
   }
@@ -18538,6 +18546,7 @@ public class User extends APINode {
       "privacy",
       "profile_id",
       "provenance_info",
+      "provenance_metadata",
       "proxied_app_id",
       "published",
       "qn",
@@ -18870,6 +18879,15 @@ public class User extends APINode {
     }
     public APIRequestCreatePhoto setProvenanceInfo (String provenanceInfo) {
       this.setParam("provenance_info", provenanceInfo);
+      return this;
+    }
+
+    public APIRequestCreatePhoto setProvenanceMetadata (Map<String, String> provenanceMetadata) {
+      this.setParam("provenance_metadata", provenanceMetadata);
+      return this;
+    }
+    public APIRequestCreatePhoto setProvenanceMetadata (String provenanceMetadata) {
+      this.setParam("provenance_metadata", provenanceMetadata);
       return this;
     }
 

@@ -67,8 +67,14 @@ public class IGUserExportForCAM extends APINode {
   private String mMessagingId = null;
   @SerializedName("onboarded_status")
   private Boolean mOnboardedStatus = null;
+  @SerializedName("page_id")
+  private String mPageId = null;
+  @SerializedName("page_name")
+  private String mPageName = null;
   @SerializedName("past_brand_partnership_partners")
   private List<String> mPastBrandPartnershipPartners = null;
+  @SerializedName("platforms")
+  private List<String> mPlatforms = null;
   @SerializedName("portfolio_url")
   private String mPortfolioUrl = null;
   @SerializedName("profile_picture_url")
@@ -359,12 +365,39 @@ public class IGUserExportForCAM extends APINode {
     return this;
   }
 
+  public String getFieldPageId() {
+    return mPageId;
+  }
+
+  public IGUserExportForCAM setFieldPageId(String value) {
+    this.mPageId = value;
+    return this;
+  }
+
+  public String getFieldPageName() {
+    return mPageName;
+  }
+
+  public IGUserExportForCAM setFieldPageName(String value) {
+    this.mPageName = value;
+    return this;
+  }
+
   public List<String> getFieldPastBrandPartnershipPartners() {
     return mPastBrandPartnershipPartners;
   }
 
   public IGUserExportForCAM setFieldPastBrandPartnershipPartners(List<String> value) {
     this.mPastBrandPartnershipPartners = value;
+    return this;
+  }
+
+  public List<String> getFieldPlatforms() {
+    return mPlatforms;
+  }
+
+  public IGUserExportForCAM setFieldPlatforms(List<String> value) {
+    this.mPlatforms = value;
     return this;
   }
 
@@ -513,6 +546,7 @@ public class IGUserExportForCAM extends APINode {
       "breakdown",
       "metrics",
       "period",
+      "platform",
       "time_range",
     };
 
@@ -597,6 +631,15 @@ public class IGUserExportForCAM extends APINode {
     }
     public APIRequestGetInsights setPeriod (String period) {
       this.setParam("period", period);
+      return this;
+    }
+
+    public APIRequestGetInsights setPlatform (List<EnumPlatform> platform) {
+      this.setParam("platform", platform);
+      return this;
+    }
+    public APIRequestGetInsights setPlatform (String platform) {
+      this.setParam("platform", platform);
       return this;
     }
 
@@ -1941,6 +1984,25 @@ public class IGUserExportForCAM extends APINode {
       }
   }
 
+  public static enum EnumPlatform {
+      @SerializedName("facebook")
+      VALUE_FACEBOOK("facebook"),
+      @SerializedName("instagram")
+      VALUE_INSTAGRAM("instagram"),
+      ;
+
+      private String value;
+
+      private EnumPlatform(String value) {
+        this.value = value;
+      }
+
+      @Override
+      public String toString() {
+        return value;
+      }
+  }
+
   public static enum EnumRecommendationType {
       @SerializedName("high_ad_performance")
       VALUE_HIGH_AD_PERFORMANCE("high_ad_performance"),
@@ -2090,7 +2152,10 @@ public class IGUserExportForCAM extends APINode {
     this.mIsPaidPartnershipMessagesEnabled = instance.mIsPaidPartnershipMessagesEnabled;
     this.mMessagingId = instance.mMessagingId;
     this.mOnboardedStatus = instance.mOnboardedStatus;
+    this.mPageId = instance.mPageId;
+    this.mPageName = instance.mPageName;
     this.mPastBrandPartnershipPartners = instance.mPastBrandPartnershipPartners;
+    this.mPlatforms = instance.mPlatforms;
     this.mPortfolioUrl = instance.mPortfolioUrl;
     this.mProfilePictureUrl = instance.mProfilePictureUrl;
     this.mUsername = instance.mUsername;

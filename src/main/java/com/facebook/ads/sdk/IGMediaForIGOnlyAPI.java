@@ -51,6 +51,8 @@ public class IGMediaForIGOnlyAPI extends APINode {
   private Long mCurrentLiveViewerCount = null;
   @SerializedName("id")
   private String mId = null;
+  @SerializedName("is_ai_generated")
+  private Boolean mIsAiGenerated = null;
   @SerializedName("is_comment_enabled")
   private Boolean mIsCommentEnabled = null;
   @SerializedName("is_shared_to_feed")
@@ -327,6 +329,10 @@ public class IGMediaForIGOnlyAPI extends APINode {
 
   public String getFieldId() {
     return mId;
+  }
+
+  public Boolean getFieldIsAiGenerated() {
+    return mIsAiGenerated;
   }
 
   public Boolean getFieldIsCommentEnabled() {
@@ -1094,6 +1100,7 @@ public class IGMediaForIGOnlyAPI extends APINode {
       "comments_count",
       "current_live_viewer_count",
       "id",
+      "is_ai_generated",
       "is_comment_enabled",
       "is_shared_to_feed",
       "like_count",
@@ -1231,6 +1238,13 @@ public class IGMediaForIGOnlyAPI extends APINode {
     }
     public APIRequestGet requestIdField (boolean value) {
       this.requestField("id", value);
+      return this;
+    }
+    public APIRequestGet requestIsAiGeneratedField () {
+      return this.requestIsAiGeneratedField(true);
+    }
+    public APIRequestGet requestIsAiGeneratedField (boolean value) {
+      this.requestField("is_ai_generated", value);
       return this;
     }
     public APIRequestGet requestIsCommentEnabledField () {
@@ -1454,6 +1468,7 @@ public class IGMediaForIGOnlyAPI extends APINode {
     this.mCommentsCount = instance.mCommentsCount;
     this.mCurrentLiveViewerCount = instance.mCurrentLiveViewerCount;
     this.mId = instance.mId;
+    this.mIsAiGenerated = instance.mIsAiGenerated;
     this.mIsCommentEnabled = instance.mIsCommentEnabled;
     this.mIsSharedToFeed = instance.mIsSharedToFeed;
     this.mLikeCount = instance.mLikeCount;

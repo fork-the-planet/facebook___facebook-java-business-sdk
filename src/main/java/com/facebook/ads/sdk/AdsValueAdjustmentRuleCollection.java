@@ -822,6 +822,8 @@ public class AdsValueAdjustmentRuleCollection extends APINode {
   public static enum EnumEntryPoint {
       @SerializedName("ADVERTISING_SETTINGS")
       VALUE_ADVERTISING_SETTINGS("ADVERTISING_SETTINGS"),
+      @SerializedName("L2_AUDIENCE")
+      VALUE_L2_AUDIENCE("L2_AUDIENCE"),
       @SerializedName("L2_CONVERSION_LOCATION")
       VALUE_L2_CONVERSION_LOCATION("L2_CONVERSION_LOCATION"),
       @SerializedName("L2_GLOBAL")

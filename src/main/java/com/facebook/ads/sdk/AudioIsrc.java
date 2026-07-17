@@ -47,6 +47,8 @@ public class AudioIsrc extends APINode {
   private String mAllKgMainArtists = null;
   @SerializedName("artist_profile_picture_url")
   private String mArtistProfilePictureUrl = null;
+  @SerializedName("canonical_audio_asset")
+  private AudioAsset mCanonicalAudioAsset = null;
   @SerializedName("id")
   private String mId = null;
   @SerializedName("isrc")
@@ -285,6 +287,13 @@ public class AudioIsrc extends APINode {
     return mArtistProfilePictureUrl;
   }
 
+  public AudioAsset getFieldCanonicalAudioAsset() {
+    if (mCanonicalAudioAsset != null) {
+      mCanonicalAudioAsset.context = getContext();
+    }
+    return mCanonicalAudioAsset;
+  }
+
   public String getFieldId() {
     return mId;
   }
@@ -325,6 +334,7 @@ public class AudioIsrc extends APINode {
       "all_kg_featured_artists",
       "all_kg_main_artists",
       "artist_profile_picture_url",
+      "canonical_audio_asset",
       "id",
       "isrc",
       "publishing_rights_data",
@@ -444,6 +454,13 @@ public class AudioIsrc extends APINode {
       this.requestField("artist_profile_picture_url", value);
       return this;
     }
+    public APIRequestGet requestCanonicalAudioAssetField () {
+      return this.requestCanonicalAudioAssetField(true);
+    }
+    public APIRequestGet requestCanonicalAudioAssetField (boolean value) {
+      this.requestField("canonical_audio_asset", value);
+      return this;
+    }
     public APIRequestGet requestIdField () {
       return this.requestIdField(true);
     }
@@ -506,6 +523,7 @@ public class AudioIsrc extends APINode {
     this.mAllKgFeaturedArtists = instance.mAllKgFeaturedArtists;
     this.mAllKgMainArtists = instance.mAllKgMainArtists;
     this.mArtistProfilePictureUrl = instance.mArtistProfilePictureUrl;
+    this.mCanonicalAudioAsset = instance.mCanonicalAudioAsset;
     this.mId = instance.mId;
     this.mIsrc = instance.mIsrc;
     this.mPublishingRightsData = instance.mPublishingRightsData;

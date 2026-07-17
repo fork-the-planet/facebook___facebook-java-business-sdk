@@ -2786,6 +2786,7 @@ public class AdsPixel extends APINode {
 
     public static final String[] FIELDS = {
       "active",
+      "associated_sgw_data_source_id",
       "blocked_event_types",
       "blocked_websites",
       "browser_agent",
@@ -2804,6 +2805,7 @@ public class AdsPixel extends APINode {
       "instance_version",
       "is_sgw_instance",
       "is_sgw_pixel_from_meta_pixel",
+      "mpc_fallback_domain",
       "partner_name",
       "pixel_id",
       "sgw_account_id",
@@ -2906,6 +2908,13 @@ public class AdsPixel extends APINode {
     }
     public APIRequestGetOpenBridgeConfigurations requestActiveField (boolean value) {
       this.requestField("active", value);
+      return this;
+    }
+    public APIRequestGetOpenBridgeConfigurations requestAssociatedSgwDataSourceIdField () {
+      return this.requestAssociatedSgwDataSourceIdField(true);
+    }
+    public APIRequestGetOpenBridgeConfigurations requestAssociatedSgwDataSourceIdField (boolean value) {
+      this.requestField("associated_sgw_data_source_id", value);
       return this;
     }
     public APIRequestGetOpenBridgeConfigurations requestBlockedEventTypesField () {
@@ -3032,6 +3041,13 @@ public class AdsPixel extends APINode {
     }
     public APIRequestGetOpenBridgeConfigurations requestIsSgwPixelFromMetaPixelField (boolean value) {
       this.requestField("is_sgw_pixel_from_meta_pixel", value);
+      return this;
+    }
+    public APIRequestGetOpenBridgeConfigurations requestMpcFallbackDomainField () {
+      return this.requestMpcFallbackDomainField(true);
+    }
+    public APIRequestGetOpenBridgeConfigurations requestMpcFallbackDomainField (boolean value) {
+      this.requestField("mpc_fallback_domain", value);
       return this;
     }
     public APIRequestGetOpenBridgeConfigurations requestPartnerNameField () {

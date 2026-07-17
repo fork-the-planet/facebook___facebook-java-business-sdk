@@ -45,6 +45,8 @@ public class CopyrightAudioAsset extends APINode {
   private String mAudioAvailabilityStatus = null;
   @SerializedName("audio_library_policy")
   private List<Map<String, List<Map<String, Object>>>> mAudioLibraryPolicy = null;
+  @SerializedName("canonical_reference_file")
+  private AudioAsset mCanonicalReferenceFile = null;
   @SerializedName("creation_time")
   private String mCreationTime = null;
   @SerializedName("id")
@@ -53,6 +55,8 @@ public class CopyrightAudioAsset extends APINode {
   private List<String> mReferenceFileIsrcs = null;
   @SerializedName("reference_files")
   private List<Object> mReferenceFiles = null;
+  @SerializedName("representative_reference_file")
+  private AudioAsset mRepresentativeReferenceFile = null;
   @SerializedName("title")
   private String mTitle = null;
   @SerializedName("update_time")
@@ -226,6 +230,23 @@ public class CopyrightAudioAsset extends APINode {
     return this;
   }
 
+  public AudioAsset getFieldCanonicalReferenceFile() {
+    if (mCanonicalReferenceFile != null) {
+      mCanonicalReferenceFile.context = getContext();
+    }
+    return mCanonicalReferenceFile;
+  }
+
+  public CopyrightAudioAsset setFieldCanonicalReferenceFile(AudioAsset value) {
+    this.mCanonicalReferenceFile = value;
+    return this;
+  }
+
+  public CopyrightAudioAsset setFieldCanonicalReferenceFile(String value) {
+    Type type = new TypeToken<AudioAsset>(){}.getType();
+    this.mCanonicalReferenceFile = AudioAsset.getGson().fromJson(value, type);
+    return this;
+  }
   public String getFieldCreationTime() {
     return mCreationTime;
   }
@@ -262,6 +283,23 @@ public class CopyrightAudioAsset extends APINode {
     return this;
   }
 
+  public AudioAsset getFieldRepresentativeReferenceFile() {
+    if (mRepresentativeReferenceFile != null) {
+      mRepresentativeReferenceFile.context = getContext();
+    }
+    return mRepresentativeReferenceFile;
+  }
+
+  public CopyrightAudioAsset setFieldRepresentativeReferenceFile(AudioAsset value) {
+    this.mRepresentativeReferenceFile = value;
+    return this;
+  }
+
+  public CopyrightAudioAsset setFieldRepresentativeReferenceFile(String value) {
+    Type type = new TypeToken<AudioAsset>(){}.getType();
+    this.mRepresentativeReferenceFile = AudioAsset.getGson().fromJson(value, type);
+    return this;
+  }
   public String getFieldTitle() {
     return mTitle;
   }
@@ -299,10 +337,12 @@ public class CopyrightAudioAsset extends APINode {
   public CopyrightAudioAsset copyFrom(CopyrightAudioAsset instance) {
     this.mAudioAvailabilityStatus = instance.mAudioAvailabilityStatus;
     this.mAudioLibraryPolicy = instance.mAudioLibraryPolicy;
+    this.mCanonicalReferenceFile = instance.mCanonicalReferenceFile;
     this.mCreationTime = instance.mCreationTime;
     this.mId = instance.mId;
     this.mReferenceFileIsrcs = instance.mReferenceFileIsrcs;
     this.mReferenceFiles = instance.mReferenceFiles;
+    this.mRepresentativeReferenceFile = instance.mRepresentativeReferenceFile;
     this.mTitle = instance.mTitle;
     this.mUpdateTime = instance.mUpdateTime;
     this.context = instance.context;

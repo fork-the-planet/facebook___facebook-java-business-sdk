@@ -1120,6 +1120,7 @@ public class ContentBlockList extends APINode {
 
     public static final String[] FIELDS = {
       "alt_text",
+      "audio_id",
       "boost_eligibility_info",
       "caption",
       "comments_count",
@@ -1129,6 +1130,7 @@ public class ContentBlockList extends APINode {
       "has_slider",
       "id",
       "ig_id",
+      "is_ai_generated",
       "is_comment_enabled",
       "is_shared_to_feed",
       "legacy_instagram_media_id",
@@ -1250,6 +1252,13 @@ public class ContentBlockList extends APINode {
       this.requestField("alt_text", value);
       return this;
     }
+    public APIRequestGetInstagramContent requestAudioIdField () {
+      return this.requestAudioIdField(true);
+    }
+    public APIRequestGetInstagramContent requestAudioIdField (boolean value) {
+      this.requestField("audio_id", value);
+      return this;
+    }
     public APIRequestGetInstagramContent requestBoostEligibilityInfoField () {
       return this.requestBoostEligibilityInfoField(true);
     }
@@ -1311,6 +1320,13 @@ public class ContentBlockList extends APINode {
     }
     public APIRequestGetInstagramContent requestIgIdField (boolean value) {
       this.requestField("ig_id", value);
+      return this;
+    }
+    public APIRequestGetInstagramContent requestIsAiGeneratedField () {
+      return this.requestIsAiGeneratedField(true);
+    }
+    public APIRequestGetInstagramContent requestIsAiGeneratedField (boolean value) {
+      this.requestField("is_ai_generated", value);
       return this;
     }
     public APIRequestGetInstagramContent requestIsCommentEnabledField () {
